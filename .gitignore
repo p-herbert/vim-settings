@@ -1,4 +1,9 @@
+# Directories
 /autoload
 /bundle
 /_old\ bundles
+
+# Files
+.netrwhist
+.DS_Store
 
