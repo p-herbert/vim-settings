@@ -1,11 +1,11 @@
 # Vim Environment
 
-These are my personal vim settings. 
+These are my personal vim settings.
 
 # Installation
 
-1. Install [pathogen].
-2. Download the plugin [comments] and save it to `~/.vim/bundle/comments/plugin/`.
+1. Install [pathogen]
+2. Download the plugin [comments] and save it to `~/.vim/bundle/comments/plugin/`
 3. Download and add to `~/.vim/syntax/` the following syntax files:
 	- [SQL]
 	- [Octave]
