@@ -1,0 +1,139 @@
+snippet macro
+	%MACRO ${1:`Filename('$1')`}();
+
+	%MEND; %**$1 mend statement;
+snippet sql
+	Proc SQL;
+	    CREATE TABLE ${8:dsn_out} AS
+	    SELECT DISTINCT
+	        ${7:vars}
+	    FROM ${1:dsn_in} AS A
+	    ${2:join}
+	    ${3:dsn_in} AS B
+	    ON ${4:key}
+	    GROUP BY ${5:group}
+	    ORDER BY ${6:order}
+	    ;
+	quit;
+snippet sql2
+	Proc SQL;
+	    SELECT ${1:var} into :${2:macro_var}
+	    FROM ${3:dsn_in}
+	    ;
+	quit;
+snippet subq
+	(SELECT DISTINCT
+		      ${5:vars}
+		  FROM ${1:dsn_in}
+		  WHERE ${2:condition}
+		  GROUP BY ${3:group}
+		  HAVING ${4:condition}
+		)
+snippet dset
+	data ${2:dsn_out};
+
+	    set ${1:dsn_in};
+
+	    ${3:'Code'}
+	run;
+snippet dsetby
+	data ${3:dsn_out};
+
+	    set ${1:dsn_in};
+	    by ${2:var};
+
+	    if first.$2 then do;
+	        ${4:'code'}
+	    end;
+	run;
+snippet dmerge
+	data ${3:dsn_out};
+
+	    merge ${1:dsn_in};
+	    by ${2:vars}
+
+	    ${4:'code'}
+	run;
+snippet hash
+	length $4 3.;
+
+	if _N_=1 then do;
+	    declare hash ${1:hash}(dataset: "${2:dsn}");
+	    $1.defineKey(${3:key});
+	    $1.defineData("${4:var}");
+	    $1.defineDone();
+	end;
+
+	if ($1.find()=0) then do;
+	    ${5:'Code'}
+	end;
+snippet pc
+	Proc Contents data=${1:dsn_in} out=contents;
+	run;
+	${2}
+snippet psort
+	Proc Sort data=${1:dsn_in} out=${2:dsn_out};
+		by ${3:vars}
+	run;
+	${4}
+snippet pdo
+	%do ${1:count}=${2:start_condition} %to &n${3:array};
+	    %let $3 = &&$3&$1;
+	    ${4:'Code'}
+	%end; %**end $1 loop;
+snippet array
+	array ${1:name}(${2:n_elements}) ${3:type} ${4:elements} (${5:initial_values});
+	${6}
+snippet darray
+	do ${2:i}=1 to dim(${1:name});
+	    ${3:'Code'}
+	end;
+snippet stats
+	proc univariate data = ${1:dsn_in};
+		by ${2:vars};
+		var ${3:vars};
+		output out     = ${4:dsn_out}
+		       nobs    = nObs
+		       mean    = mean
+		       std     = std
+		       min     = min
+		       q1      = q1
+		       median  = median
+		       q3      = q3
+		       max     = max
+		       pctlpre = P_
+		       pctlpts = 0 to 100 by 10
+		;
+	run;
+	${5}
+snippet histo
+	proc univariate data = ${1:dsn_in} noprint;
+		by ${2:vars};
+		var ${3:vars};
+		histogram / noplot
+		            endpoints    = ${4:start} to ${5:end} by ${6:step}
+			    rtinclude
+		            outhistogram = ${7:dsn_out}
+		;
+	run;
+	${8}
+snippet header
+	/*%*************************************************************************;
+	%** PROGRAM: `Filename('$1.sas','name')`
+	%**
+	%** PURPOSE:  ${1}
+	%**
+	%** PREREQS:  ${2}
+	%**
+	%** OUTPUT:   ${3}
+	%**
+	%** NOTES:    ${4}
+	%**
+	%**
+	%**
+	%** AUTHOR: `g:snips_author`
+	%** DATE Created: `system("date +%Y-%m-%d")`
+	%** LAST Modified:
+	%*************************************************************************;*/
+
+	${5}

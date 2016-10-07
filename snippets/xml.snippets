@@ -1,0 +1,35 @@
+snippet header
+	<?xml version="1.0" encoding="UTF-8" ?>
+	${1}
+snippet sch
+	xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"${1}
+snippet tag
+	<xs:element name="${1:name}" ${2}/>
+snippet elm
+	xs:element name="${1:name}" type="xs:${2:type}"${3}
+snippet def
+	default="${1:text}"
+snippet use
+	use="required"
+snippet att
+	<xs:attribute name="${1:name}" type="xs:${2:type}" use="required"${3}/>
+snippet cmplx
+	xs:complexType
+snippet sim
+	xs:simpleContent
+snippet ext
+	xs:extension base="xs:${1:baseType}"${2}
+snippet res
+	xs:restriction base="xs:${1:baseType}"${2}
+snippet mix
+	xs:complexType mixed="true"
+snippet seq
+	xs:sequence
+snippet unb
+	maxOccurs="unbounded"
+snippet max
+	maxOccurs="${1:num}"${2}
+snippet min
+	minOccurs="${1:num}"${2}
+snippet com
+	<!-- ${1:comment} -->

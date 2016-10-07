@@ -1,0 +1,46 @@
+snippet fun
+	${1:name} <- function(${2:vars}) {
+		${3:## docstring for $1}
+		${4:## code}
+	}	
+snippet for
+	for(${1:i} in ${2:count}) {
+		${3:## code}
+	}
+snippet if
+	if(${1:condition}) {
+		${2:# code}
+	}
+snippet lib
+	library(${1:library})
+snippet time
+	system.time(${1:function})
+snippet cc
+	complete.cases(${1:column})
+snippet dl
+	download.file(${1:url}, ${2:filename}, method="curl")
+snippet df
+	df <- data.frame(${1:data}, row.names=${2:NULL}, check.rows=${3:FALSE}, check.names=${4:TRUE}, stringsAsFactors=${5:default.stringsAsFactors()})
+	${6}
+snippet dt
+	${1:DT} <- data.table(${2:data}, keep.rownames=${3:FALSE}, check.names=${4:FALSE}, key=${5:NULL})
+	${6}
+snippet rt
+	df <- read.table(${1:file}, header=${2:FALSE}, sep=${3:""}, col.names=${4:col_names}, encoding=${5:"UTF-8"})
+	${6}
+snippet nc
+	${1:DT}[,${2:col}:= {${3:function} ; ${4:function}}, by=${5:var}]
+snippet auth
+	my_app = oauth_app("${1:website}", key="${2:ConsumerKey}", secret="${3:SecretConsumerKey}")
+	sign = sign_oauth1.0(my_app, token="${4:Token}", token_secret="${5:SecretToken}")
+snippet get
+	home = GET("${1:website}", sign)
+snippet header
+	#!/usr/bin/Rscript
+	# NAME: `g:snips_author` 
+	# FILE: `Filename('$1.r','name')`
+	# DATE: `system("date +%Y-%m-%d")`
+	# DESC: ${1:desc}
+	# LAST Modified:
+	
+	${2}

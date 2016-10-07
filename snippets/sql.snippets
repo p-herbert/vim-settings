@@ -1,0 +1,31 @@
+snippet select
+	select
+		${2:*}
+	from ${1:table}
+	;
+snippet drop
+	if object_id('${1:obj}', '${2:P}') IS NOT NULL
+	DROP ${3:PROC} $1;
+	${4}
+snippet proc
+	GO
+	create procedure ${1:proc}(${2:parms}) as
+	begin
+		${3:code}
+	end;
+	GO
+snippet func
+	GO
+	create function ${1:func}(${2:parms})
+		returns ${3:type}
+	begin
+		${5:code}
+		return ${4:parm};
+	end;
+	GO
+snippet dc
+	declare @${1:var} ${2:type} = ${3:code};
+snippet with
+	with ${1:name} as (
+		${2:code}
+	)
