@@ -7,9 +7,6 @@ map <S-C> :norm i#<CR>
 
 let g:syntastic_python_checkers = ['flake8']
 
-" Check against PEP 8 Style Guide
-""let g:pep8_map='<leader>8'
-
 " Execute Python Script
 autocmd BufReadPre *.py nmap <F1> :w<CR>:!python3 %:r.py<CR>
 
