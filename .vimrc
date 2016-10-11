@@ -1,13 +1,28 @@
-"Add path to powerline
+" Add path to powerline
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 filetype off
 execute pathogen#infect()
 call pathogen#helptags()
 
-"Vertical Split: Ctrl+w + v
-"Horizontal Split: Ctrl+w + s
-"Close current windows: Ctrl+w + q
+" Vertical Split: Ctrl+w + v
+" Horizontal Split: Ctrl+w + s
+" Close current windows: Ctrl+w + q
+
+" Change cursor by mode for iterm2
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
 
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -34,7 +49,7 @@ nmap <leader>d :Gvdiff<CR>
 :set hlsearch!
 :nnoremap <F5> :set hlsearch!<CR>
 
-"load the background script
+" load the background script
 call togglebg#map("<F6>")
 
 " In normal mode insert the current datestamp
@@ -76,7 +91,7 @@ endfunction
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
-"Map HighlightRepeats function
+" Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
 filetype on                      " try to detect filetypes
@@ -102,21 +117,21 @@ let g:solarized_termcolors=256
 colorscheme solarized
 :set number
 
-"Show current column and row in statusbar
+" Show current column and row in statusbar
 :set ruler
-"Set the maximum column width and wrap long lines
+" Set the maximum column width and wrap long lines
 :set tw=79
 :set wrap
 
-"Highlight background when text goes over 79 chars
+" Highlight background when text goes over 79 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%80v.\+/
 
-"Highlight trailing whitespace
+" Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 2match ExtraWhitespace /[ \t]\+$/
 
-"Global text settings
+" Global text settings
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -124,21 +139,21 @@ set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 
-"Add Fugitive statusline
+" Add Fugitive statusline
 set statusline+=%{fugitive#statusline()}
 
-"Set snipMate author
+" Set snipMate author
 let g:snips_author='Peter Herbert'
 
 let g:SuperTabDefaultCompletionType = "context"
 
-"Remap SuperTab
+" Remap SuperTab
 let g:SuperTabMappingForward = "<M-space>"
 let g:SuperTabMappingBackward = "<c-M-space>"
 
 set completeopt=menuone,longest,preview
 
-"Set the maximum number of files for Command-T
+" Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
 
 " Open a NERDTree automatically when vim starts up if no files were specified
