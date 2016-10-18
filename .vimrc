@@ -109,6 +109,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.pl set filetype=perl
  au! BufRead,BufNewFile *.js set filetype=javascript
  au! BufRead,BufNewFile *.json set filetype=json
+ au! BufRead,BufNewFile *.tex set filetype=tex
 augroup END
 
 syntax on                        " syntax highlighing
