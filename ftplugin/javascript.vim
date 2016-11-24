@@ -12,6 +12,9 @@ nmap <F1> :!node %<CR>
 " JSHint
 nmap <F2> :JSHint<CR>
 
+" Mocha
+nmap <F3> :!mocha %<CR>
+
 " Comment out lines of code
 map <S-C> :norm i// <CR>
 
