@@ -43,6 +43,7 @@ map <leader>w :%s/[ \t]\+$//g<CR>g;
 map <F8> :TagbarToggle<CR>
 nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
+nmap <leader>b :Gblame<CR>
 
 " Function Keys
 " Highlight all search matches
