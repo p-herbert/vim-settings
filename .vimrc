@@ -44,6 +44,7 @@ map <F8> :TagbarToggle<CR>
 nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
+nmap <leader>ci :!git add % && git ci<CR>
 
 " Function Keys
 " Highlight all search matches
