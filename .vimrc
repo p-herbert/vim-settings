@@ -137,8 +137,8 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 " Global text settings
 set tabstop=4
 set shiftwidth=4
-set softtabstop=0
-set smarttab noexpandtab autoindent
+set softtabstop=4
+set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 
