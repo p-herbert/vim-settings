@@ -188,3 +188,5 @@ set noshowmode
 set wildmenu
 set wildmode=longest,list,full
 
+" Ignore
+set wildignore+=*/node_modules,*/.git
