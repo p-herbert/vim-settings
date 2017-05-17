@@ -2,10 +2,6 @@
 set foldmethod=syntax
 set foldlevelstart=1
 let javaScript_fold=1
-set tabstop=4
-set shiftwidth=4
-set softtabstop=0
-set noexpandtab smartindent
 
 nmap <F1> :!node %<CR>
 
