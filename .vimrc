@@ -45,6 +45,7 @@ nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
 nmap <leader>ci :!git add % && git ci<CR>
+nmap <leader>s :Gstatus<CR>
 
 " Function Keys
 " Highlight all search matches
