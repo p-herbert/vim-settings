@@ -119,6 +119,8 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
+command! -nargs=1 Find :vim /<args>/gj % | :copen
+
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
