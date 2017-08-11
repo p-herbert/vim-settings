@@ -27,4 +27,5 @@ let g:prettier#config#parser = 'babylon'
 
 " Syntastic plugin
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = ['--fix']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
