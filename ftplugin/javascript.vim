@@ -3,6 +3,15 @@ set foldmethod=syntax
 set foldlevelstart=1
 let javaScript_fold=1
 
+" Enable autoread to reload any files from files when checktime is called and
+" the file is changed
+set autoread
+
+" Autofix with eslint
+function! SyntasticCheckHook(errors)
+  checktime
+endfunction
+
 nmap <F1> :!node %<CR>
 
 " JSHint
