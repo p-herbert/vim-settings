@@ -23,6 +23,8 @@ let g:prettier#config#tab_width = 4
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
+let g:prettier#config#parser = 'babylon'
+
 " Syntastic plugin
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
