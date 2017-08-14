@@ -205,7 +205,9 @@ set autoread
 
 " Autofix with eslint
 function! SyntasticCheckHook(errors)
-  checktime
+    if !empty(a:errors)
+        checktime
+    endif
 endfunction
 
 let g:syntastic_always_populate_loc_list = 1
