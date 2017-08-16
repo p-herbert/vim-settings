@@ -21,8 +21,6 @@ let g:jsx_ext_required = 0
 let g:prettier#config#tab_width = 4
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
-
 let g:prettier#config#parser = 'babylon'
 
 " Syntastic plugin
