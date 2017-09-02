@@ -64,7 +64,7 @@ call togglebg#map("<F6>")
 :nnoremap <F7> "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
 
 " If buffer modified, update any 'LAST modified:' in the first 20 lines.
-" 'LAST Modified:' can have up to 10 characters before (they are retained).
+" 'LAST Modified: 2017-09-02 20:21:58
 " " Restores cursor and window position using save_cursor variable.
 function! LastModified()
   if &modified
@@ -236,6 +236,18 @@ let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set showtabline=2
 set noshowmode
+
+set tags=./tags,tags,~/.vimtags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_file = 1
+let g:easytags_languages = {
+\   'javascript': {
+\       'args': ['-f'],
+\       'cmd': 'jsctags',
+\       'recurse_flag': ''
+\   }
+\}
 
 " Command mode autocomplete
 set wildmenu
