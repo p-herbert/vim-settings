@@ -135,6 +135,7 @@ vn <leader>R :call HighlightRepeats()<CR>
 
 filetype on                      " try to detect filetypes
 filetype plugin indent on    	 " enable loading indent file for filetype
+set omnifunc=syntaxcomplete#Complete
 
 " Set FileType
 augroup filetypedetect
