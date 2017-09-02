@@ -21,8 +21,12 @@ else
   "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
+
+augroup cursor
+    autocmd!
+    :autocmd InsertEnter * set cul
+    :autocmd InsertLeave * set nocul
+augroup END
 
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -72,7 +76,11 @@ function! LastModified()
     call setpos('.', save_cursor)
   endif
 endfun
-autocmd BufWritePre * call LastModified()
+
+augroup lastModified
+    autocmd!
+    autocmd BufWritePre * call LastModified()
+augroup END
 
 " Highlight duplicate lines in file
 function! HighlightRepeats() range
@@ -188,12 +196,14 @@ set completeopt=menuone,longest,preview
 " Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
 
-" Open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+augroup NERDTree
+    " Open a NERDTree automatically when vim starts up if no files were specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " Close vim if the only window left open is a NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
