@@ -51,6 +51,7 @@ nmap <leader>b :Gblame<CR>
 nmap <leader>ci :!git add % && git ci<CR>
 nmap <leader>s :Gstatus<CR>
 nmap <leader>p :Prettier<CR>:w<CR>
+nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 
 " Function Keys
 " Highlight all search matches
