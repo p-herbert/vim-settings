@@ -158,6 +158,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 :set number
+set splitright
 
 " Show current column and row in statusbar
 :set ruler
