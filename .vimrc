@@ -256,4 +256,4 @@ set wildmenu
 set wildmode=longest,list,full
 
 " Ignore
-set wildignore+=*/node_modules,*/.git
+set wildignore+=*/node_modules,*/.git,*/.meteor
