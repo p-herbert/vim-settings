@@ -138,6 +138,11 @@ filetype on                      " try to detect filetypes
 filetype plugin indent on    	 " enable loading indent file for filetype
 set omnifunc=syntaxcomplete#Complete
 
+" Tern settings
+let g:tern_map_keys=1
+let g:tern_show_argument_hints="on_hold"
+"autocmd Filetype javascript setlocal omnifunc=tern#Complete
+
 " Set FileType
 augroup filetypedetect
  au! BufRead,BufNewFile *.m,*.oct set filetype=octave
