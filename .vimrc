@@ -194,7 +194,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabMappingForward = "<M-space>"
 let g:SuperTabMappingBackward = "<c-M-space>"
 
-set completeopt=menuone,longest,preview
+set completeopt=menuone,longest
 
 " Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
