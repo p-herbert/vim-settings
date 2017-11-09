@@ -244,6 +244,14 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
+" YCM settings
+let g:ycm_collect_identifiers_from_tags_files = 1
+" disable YCM in some file
+let g:ycm_filetype_blacklist = {
+\  'tagbar' : 1,
+\  'nerdtree' : 1,
+\}
+
 set tags=./tags,tags,~/.vimtags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
