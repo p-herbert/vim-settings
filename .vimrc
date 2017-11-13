@@ -1,6 +1,9 @@
 " Add path to powerline
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
+" Disable bundles by adding full path to bundle
+let g:pathogen_blacklist=[]
+
 filetype off
 execute pathogen#infect()
 call pathogen#helptags()
