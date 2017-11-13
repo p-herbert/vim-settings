@@ -64,25 +64,6 @@ nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 " load the background script
 call togglebg#map("<F6>")
 
-" If buffer modified, update any 'LAST modified:' in the first 20 lines.
-" 'LAST Modified: 2017-09-02 20:21:58
-" " Restores cursor and window position using save_cursor variable.
-function! LastModified()
-  if &modified
-    let save_cursor = getpos(".")
-    let n = min([20, line("$")])
-    keepjumps exe '1,' . n . 's#^\(.\{,10}LAST Modified:\).*#\1' .
-			    \ strftime(' %Y-%m-%d %H:%M:%S') . '#e'
-    call histdel('search', -1)
-    call setpos('.', save_cursor)
-  endif
-endfun
-
-augroup lastModified
-    autocmd!
-    autocmd BufWritePre * call LastModified()
-augroup END
-
 " Highlight duplicate lines in file
 function! HighlightRepeats() range
   let lineCounts = {}
