@@ -248,6 +248,10 @@ set noshowmode
 
 " YCM settings
 let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_use_ultisnips_completer = 0
+
 " disable YCM in some file
 let g:ycm_filetype_blacklist = {
 \  'tagbar' : 1,
