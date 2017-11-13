@@ -64,9 +64,6 @@ nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 " load the background script
 call togglebg#map("<F6>")
 
-" In normal mode insert the current datestamp
-:nnoremap <F7> "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
-
 " If buffer modified, update any 'LAST modified:' in the first 20 lines.
 " 'LAST Modified: 2017-09-02 20:21:58
 " " Restores cursor and window position using save_cursor variable.
