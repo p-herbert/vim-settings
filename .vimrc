@@ -76,9 +76,22 @@ set completeopt=menuone,longest
 " Tag files
 set tags=./tags,tags,~/.vimtags
 
+" =============================================================================
+" Highlight
+" =============================================================================
+
 " Change cursor by mode for iterm2
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+
+" Highlight background when text goes over 79 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+2match ExtraWhitespace /[ \t]\+$/
+
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
@@ -162,14 +175,6 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.tex set filetype=tex
 augroup END
 
-
-" Highlight background when text goes over 79 chars
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%80v.\+/
-
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-2match ExtraWhitespace /[ \t]\+$/
 
 
 " Add Fugitive statusline
