@@ -47,6 +47,8 @@ set showtabline=2   " Always show tabs
 set noshowmode      " Disable message on last line
 
 " Patterns
+set ignorecase      " Default to using case insensitive searches,
+set smartcase       " unless uppercase letters are used in the regex.
 :set hlsearch!      " Highlight all search matches
 
 " Command mode autocomplete
