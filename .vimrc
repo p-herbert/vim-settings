@@ -38,6 +38,9 @@ set splitright
 " Show current column and row in statusbar
 :set ruler
 
+" Highlight all search matches
+:set hlsearch!
+
 " Set the maximum column width and wrap long lines
 :set tw=79
 :set wrap
