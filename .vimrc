@@ -133,6 +133,9 @@ nmap <leader>s :Gstatus<CR>
 nmap <leader>p :Prettier<CR>:w<CR>
 nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 
+" Map HighlightRepeats function
+vn <leader>R :call HighlightRepeats()<CR>
+
 " Function Keys
 " Highlight all search matches
 :set hlsearch!
@@ -149,9 +152,6 @@ call togglebg#map("<F6>")
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 command! -nargs=1 Find :vim /<args>/gj % | :copen
-
-" Map HighlightRepeats function
-vn <leader>R :call HighlightRepeats()<CR>
 
 " =============================================================================
 " Statusline
