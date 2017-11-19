@@ -17,48 +17,37 @@ call pathogen#helptags()
 " General settings
 " =============================================================================
 
-filetype on                      " try to detect filetypes
-filetype plugin indent on    	 " enable loading indent file for filetype
-set omnifunc=syntaxcomplete#Complete
+syntax on                           " Syntax highlighting
+filetype on                         " Try to detect filetypes
+filetype plugin indent on    	    " Enable loading indent file for filetype
+set number                          " Display line numbers
 
-" Vertical Split: Ctrl+w + v
-" Horizontal Split: Ctrl+w + s
-" Close current windows: Ctrl+w + q
-
-" Syntax highlighing
-syntax on
+" Color scheme
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
-" Display line numbers
-:set number
-set splitright
-
-" Show current column and row in statusbar
-:set ruler
-
-" Highlight all search matches
-:set hlsearch!
-
-" Set the maximum column width and wrap long lines
-:set tw=79
-:set wrap
-
-" Global text settings
+" Moving/Editing
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
-
 set backspace=2
+:set tw=79              " Set the maximum column width
+:set wrap               " Wrap long lines
 set clipboard=unnamed
+set splitright
 
+" Messages, Info, Status
+:set ruler          " Show current column and row in statusbar
 set laststatus=2
-set showtabline=2
-set noshowmode
+set showtabline=2   " Always show tabs
+set noshowmode      " Disable message on last line
+
+" Patterns
+:set hlsearch!      " Highlight all search matches
 
 " Command mode autocomplete
 set wildmenu
@@ -67,11 +56,12 @@ set wildmode=longest,list,full
 " Ignore
 set wildignore+=*/node_modules,*/.git,*/.meteor
 
-" Enable autoread to reload any files from files when checktime is called and
-" the file is changed
+" Reading/Writing
 set autoread
 
+" Completion
 set completeopt=menuone,longest
+set omnifunc=syntaxcomplete#Complete
 
 " Tag files
 set tags=./tags,tags,~/.vimtags
