@@ -130,10 +130,7 @@ vn <leader>R :call HighlightRepeats()<CR>
 
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
-
-" load the background script
-call togglebg#map("<F6>")
-
+call togglebg#map("<F6>")       " load the background script
 map <F8> :TagbarToggle<CR>
 
 " =============================================================================
@@ -148,10 +145,10 @@ command! -nargs=1 Find :vim /<args>/gj % | :copen
 " Statusline
 " =============================================================================
 
-" Add Fugitive statusline
+" Fugitive
 set statusline+=%{fugitive#statusline()}
 
-" Syntastic Settings
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -166,21 +163,21 @@ let g:tern_show_argument_hints="on_hold"
 let g:tern_show_signature_in_pum=1
 "autocmd Filetype javascript setlocal omnifunc=tern#Complete
 
-" Set snipMate author
+" SnipMate author
 let g:snips_author='Peter Herbert'
 
+" SuperTab settings
 let g:SuperTabDefaultCompletionType = "context"
-
-" Remap SuperTab
 let g:SuperTabMappingForward = "<M-space>"
 let g:SuperTabMappingBackward = "<c-M-space>"
 
-" Set the maximum number of files for Command-T
+" Command-T settings
 let g:CommandTMaxFiles=20000
 
-
+" Prettier settings
 let g:prettier#quickfix_enabled = 0
 
+" Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -197,13 +194,12 @@ let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_use_ultisnips_completer = 0
-
-" disable YCM in some file
 let g:ycm_filetype_blacklist = {
 \  'tagbar' : 1,
 \  'nerdtree' : 1,
 \}
 
+" Easytags settings
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
 let g:easytags_dynamic_file = 1
