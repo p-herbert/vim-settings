@@ -131,8 +131,11 @@ nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 call togglebg#map("<F6>")
 
 
-command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+" =============================================================================
+" Commands
+" =============================================================================
 
+command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 command! -nargs=1 Find :vim /<args>/gj % | :copen
 
