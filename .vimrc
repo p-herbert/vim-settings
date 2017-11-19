@@ -1,9 +1,9 @@
-" Add path to powerline
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
-
 " =============================================================================
 " Package management
 " =============================================================================
+
+" Add path to powerline
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Disable bundles by adding full path to bundle
 let g:pathogen_blacklist=[]
