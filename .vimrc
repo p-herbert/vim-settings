@@ -70,36 +70,6 @@ set pumheight=6
 set tags=./tags,tags,~/.vimtags
 
 " =============================================================================
-" Highlight
-" =============================================================================
-
-" Change cursor by mode for iterm2
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-
-" Highlight background when text goes over 79 chars
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%80v.\+/
-
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-2match ExtraWhitespace /[ \t]\+$/
-
-" =============================================================================
-" Terminal settings
-" =============================================================================
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-" =============================================================================
 " Mappings
 " =============================================================================
 
@@ -211,6 +181,70 @@ let g:easytags_languages = {
 \}
 
 " =============================================================================
+" augroup
+" =============================================================================
+
+augroup cursor
+    autocmd!
+    :autocmd InsertEnter * set cul
+    :autocmd InsertLeave * set nocul
+augroup END
+
+augroup NERDTree
+    " Open a NERDTree automatically when vim starts up if no files were specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+    " Close vim if the only window left open is a NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
+
+" Set filetype
+augroup filetypedetect
+ au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+ au! BufRead,BufNewFile *.sas set filetype=sas
+ au! BufRead,BufNewFile *.log set filetype=log
+ au! BufRead,BufNewFile *.r,*.R set filetype=r
+ au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
+ au! BufRead,BufNewFile *.sql set filetype=sql
+ au! BufRead,BufNewFile *.py set filetype=python
+ au! BufRead,BufNewFile *.pl set filetype=perl
+ au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
+ au! BufRead,BufNewFile *.json set filetype=json
+ au! BufRead,BufNewFile *.tex set filetype=tex
+augroup END
+
+" =============================================================================
+" Highlight
+" =============================================================================
+
+" Change cursor by mode for iterm2
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+
+" Highlight background when text goes over 79 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+2match ExtraWhitespace /[ \t]\+$/
+
+" =============================================================================
+" Terminal settings
+" =============================================================================
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" =============================================================================
 " Functions
 " =============================================================================
 
@@ -263,38 +297,4 @@ function! SyntasticCheckHook(errors)
         checktime
     endif
 endfunction
-
-" =============================================================================
-" augroup
-" =============================================================================
-
-augroup cursor
-    autocmd!
-    :autocmd InsertEnter * set cul
-    :autocmd InsertLeave * set nocul
-augroup END
-
-augroup NERDTree
-    " Open a NERDTree automatically when vim starts up if no files were specified
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-    " Close vim if the only window left open is a NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-augroup END
-
-" Set filetype
-augroup filetypedetect
- au! BufRead,BufNewFile *.m,*.oct set filetype=octave
- au! BufRead,BufNewFile *.sas set filetype=sas
- au! BufRead,BufNewFile *.log set filetype=log
- au! BufRead,BufNewFile *.r,*.R set filetype=r
- au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
- au! BufRead,BufNewFile *.sql set filetype=sql
- au! BufRead,BufNewFile *.py set filetype=python
- au! BufRead,BufNewFile *.pl set filetype=perl
- au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
- au! BufRead,BufNewFile *.json set filetype=json
- au! BufRead,BufNewFile *.tex set filetype=tex
-augroup END
 
