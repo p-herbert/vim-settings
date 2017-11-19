@@ -153,16 +153,26 @@ command! -nargs=1 Find :vim /<args>/gj % | :copen
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
+" =============================================================================
+" Statusline
+" =============================================================================
+
+" Add Fugitive statusline
+set statusline+=%{fugitive#statusline()}
+
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" =============================================================================
+" Package settings
+" =============================================================================
+
 " Tern settings
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
 "autocmd Filetype javascript setlocal omnifunc=tern#Complete
-
-
-
-
-" Add Fugitive statusline
-set statusline+=%{fugitive#statusline()}
 
 " Set snipMate author
 let g:snips_author='Peter Herbert'
@@ -175,11 +185,6 @@ let g:SuperTabMappingBackward = "<c-M-space>"
 
 " Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
-
-" Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 
 let g:prettier#quickfix_enabled = 0
