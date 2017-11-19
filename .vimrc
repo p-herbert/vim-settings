@@ -161,7 +161,6 @@ set statusline+=%*
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
 let g:tern_show_signature_in_pum=1
-"autocmd Filetype javascript setlocal omnifunc=tern#Complete
 
 " SnipMate author
 let g:snips_author='Peter Herbert'
@@ -294,7 +293,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.sql set filetype=sql
  au! BufRead,BufNewFile *.py set filetype=python
  au! BufRead,BufNewFile *.pl set filetype=perl
- au! BufRead,BufNewFile *.js set filetype=javascript
+ au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
  au! BufRead,BufNewFile *.json set filetype=json
  au! BufRead,BufNewFile *.tex set filetype=tex
 augroup END
