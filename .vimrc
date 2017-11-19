@@ -102,12 +102,6 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-augroup cursor
-    autocmd!
-    :autocmd InsertEnter * set cul
-    :autocmd InsertLeave * set nocul
-augroup END
-
 " =============================================================================
 " Mappings
 " =============================================================================
@@ -160,20 +154,6 @@ let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
 "autocmd Filetype javascript setlocal omnifunc=tern#Complete
 
-" Set FileType
-augroup filetypedetect
- au! BufRead,BufNewFile *.m,*.oct set filetype=octave
- au! BufRead,BufNewFile *.sas set filetype=sas
- au! BufRead,BufNewFile *.log set filetype=log
- au! BufRead,BufNewFile *.r,*.R set filetype=r
- au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
- au! BufRead,BufNewFile *.sql set filetype=sql
- au! BufRead,BufNewFile *.py set filetype=python
- au! BufRead,BufNewFile *.pl set filetype=perl
- au! BufRead,BufNewFile *.js set filetype=javascript
- au! BufRead,BufNewFile *.json set filetype=json
- au! BufRead,BufNewFile *.tex set filetype=tex
-augroup END
 
 
 
@@ -191,15 +171,6 @@ let g:SuperTabMappingBackward = "<c-M-space>"
 
 " Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
-
-augroup NERDTree
-    " Open a NERDTree automatically when vim starts up if no files were specified
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-    " Close vim if the only window left open is a NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-augroup END
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -296,4 +267,38 @@ function! SyntasticCheckHook(errors)
         checktime
     endif
 endfunction
+
+" =============================================================================
+" augroup
+" =============================================================================
+
+augroup cursor
+    autocmd!
+    :autocmd InsertEnter * set cul
+    :autocmd InsertLeave * set nocul
+augroup END
+
+augroup NERDTree
+    " Open a NERDTree automatically when vim starts up if no files were specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+    " Close vim if the only window left open is a NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
+
+" Set filetype
+augroup filetypedetect
+ au! BufRead,BufNewFile *.m,*.oct set filetype=octave
+ au! BufRead,BufNewFile *.sas set filetype=sas
+ au! BufRead,BufNewFile *.log set filetype=log
+ au! BufRead,BufNewFile *.r,*.R set filetype=r
+ au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
+ au! BufRead,BufNewFile *.sql set filetype=sql
+ au! BufRead,BufNewFile *.py set filetype=python
+ au! BufRead,BufNewFile *.pl set filetype=perl
+ au! BufRead,BufNewFile *.js set filetype=javascript
+ au! BufRead,BufNewFile *.json set filetype=json
+ au! BufRead,BufNewFile *.tex set filetype=tex
+augroup END
 
