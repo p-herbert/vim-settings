@@ -124,7 +124,6 @@ map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <leader>w :%s/[ \t]\+$//g<CR>g;
-map <F8> :TagbarToggle<CR>
 nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
@@ -136,14 +135,13 @@ nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
-" Function Keys
-" Highlight all search matches
-:set hlsearch!
+" Function keys
 :nnoremap <F5> :set hlsearch!<CR>
 
 " load the background script
 call togglebg#map("<F6>")
 
+map <F8> :TagbarToggle<CR>
 
 " =============================================================================
 " Commands
