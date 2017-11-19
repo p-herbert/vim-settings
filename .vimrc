@@ -64,6 +64,7 @@ set autoread
 " Completion
 set completeopt=menuone,longest
 set omnifunc=syntaxcomplete#Complete
+set pumheight=6
 
 " Tag files
 set tags=./tags,tags,~/.vimtags
