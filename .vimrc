@@ -92,6 +92,11 @@ augroup cursor
     :autocmd InsertLeave * set nocul
 augroup END
 
+" =============================================================================
+" Mappings
+" =============================================================================
+
+" Remap moving between windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
