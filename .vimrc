@@ -13,9 +13,65 @@ filetype off
 execute pathogen#infect()
 call pathogen#helptags()
 
+" =============================================================================
+" General settings
+" =============================================================================
+
+filetype on                      " try to detect filetypes
+filetype plugin indent on    	 " enable loading indent file for filetype
+set omnifunc=syntaxcomplete#Complete
+
 " Vertical Split: Ctrl+w + v
 " Horizontal Split: Ctrl+w + s
 " Close current windows: Ctrl+w + q
+
+" Syntax highlighing
+syntax on
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Display line numbers
+:set number
+set splitright
+
+" Show current column and row in statusbar
+:set ruler
+
+" Set the maximum column width and wrap long lines
+:set tw=79
+:set wrap
+
+" Global text settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set smarttab expandtab autoindent
+set foldmethod=indent
+set foldlevel=20
+
+set backspace=2
+set clipboard=unnamed
+
+set laststatus=2
+set showtabline=2
+set noshowmode
+
+" Command mode autocomplete
+set wildmenu
+set wildmode=longest,list,full
+
+" Ignore
+set wildignore+=*/node_modules,*/.git,*/.meteor
+
+" Enable autoread to reload any files from files when checktime is called and
+" the file is changed
+set autoread
+
+set completeopt=menuone,longest
+
+" Tag files
+set tags=./tags,tags,~/.vimtags
 
 " Change cursor by mode for iterm2
 highlight Cursor guifg=white guibg=black
@@ -44,9 +100,6 @@ map <c-h> <c-w>h
 " Tab mappings
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-
-set backspace=2
-set clipboard=unnamed
 
 map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
@@ -120,10 +173,6 @@ command! -nargs=1 Find :vim /<args>/gj % | :copen
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
-filetype on                      " try to detect filetypes
-filetype plugin indent on    	 " enable loading indent file for filetype
-set omnifunc=syntaxcomplete#Complete
-
 " Tern settings
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
@@ -144,18 +193,6 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.tex set filetype=tex
 augroup END
 
-syntax on                        " syntax highlighing
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-:set number
-set splitright
-
-" Show current column and row in statusbar
-:set ruler
-" Set the maximum column width and wrap long lines
-:set tw=79
-:set wrap
 
 " Highlight background when text goes over 79 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -165,13 +202,6 @@ match OverLength /\%80v.\+/
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 2match ExtraWhitespace /[ \t]\+$/
 
-" Global text settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set smarttab expandtab autoindent
-set foldmethod=indent
-set foldlevel=20
 
 " Add Fugitive statusline
 set statusline+=%{fugitive#statusline()}
@@ -184,8 +214,6 @@ let g:SuperTabDefaultCompletionType = "context"
 " Remap SuperTab
 let g:SuperTabMappingForward = "<M-space>"
 let g:SuperTabMappingBackward = "<c-M-space>"
-
-set completeopt=menuone,longest
 
 " Set the maximum number of files for Command-T
 let g:CommandTMaxFiles=20000
@@ -204,9 +232,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" Enable autoread to reload any files from files when checktime is called and
-" the file is changed
-set autoread
 
 " Autofix with eslint
 function! SyntasticCheckHook(errors)
@@ -228,10 +253,6 @@ let g:syntastic_cursor_column = 0
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
-set laststatus=2
-set showtabline=2
-set noshowmode
-
 " YCM settings
 let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_register_as_syntastic_checker = 0
@@ -244,7 +265,6 @@ let g:ycm_filetype_blacklist = {
 \  'nerdtree' : 1,
 \}
 
-set tags=./tags,tags,~/.vimtags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
 let g:easytags_dynamic_file = 1
@@ -256,9 +276,3 @@ let g:easytags_languages = {
 \   }
 \}
 
-" Command mode autocomplete
-set wildmenu
-set wildmode=longest,list,full
-
-" Ignore
-set wildignore+=*/node_modules,*/.git,*/.meteor
