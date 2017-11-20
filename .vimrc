@@ -35,13 +35,13 @@ set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 set backspace=2
-:set tw=79              " Set the maximum column width
-:set wrap               " Wrap long lines
+set tw=79              " Set the maximum column width
+set wrap               " Wrap long lines
 set clipboard=unnamed
 set splitright
 
 " Messages, Info, Status
-:set ruler          " Show current column and row in statusbar
+set ruler          " Show current column and row in statusbar
 set laststatus=2
 set showtabline=2   " Always show tabs
 set noshowmode      " Disable message on last line
@@ -49,7 +49,7 @@ set noshowmode      " Disable message on last line
 " Patterns
 set ignorecase      " Default to using case insensitive searches,
 set smartcase       " unless uppercase letters are used in the regex.
-:set hlsearch!      " Highlight all search matches
+set hlsearch!      " Highlight all search matches
 
 " Command mode autocomplete
 set wildmenu
