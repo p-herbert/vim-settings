@@ -1,7 +1,14 @@
-" Javascript Settings
+" =============================================================================
+" Javascript settings
+" =============================================================================
+
 set foldmethod=syntax
 set foldlevelstart=1
 let javaScript_fold=1
+
+" =============================================================================
+" Mappings
+" =============================================================================
 
 nmap <F1> :!node %<CR>
 
@@ -14,20 +21,24 @@ nmap <F3> :!mocha %<CR>
 " Comment out lines of code
 map <S-C> :norm i// <CR>
 
+" =============================================================================
+" Package settings
+" =============================================================================
+
 " Enable jsx for js files as well
 let g:jsx_ext_required = 0
 
-" number of spaces per indentation level
-let g:prettier#config#tab_width = 4
-
+" Prettier settings
+let g:prettier#config#tab_width = 4     " number of spaces per indentation level
 let g:prettier#autoformat = 0
 let g:prettier#config#parser = 'babylon'
 
-" Syntastic plugin
+" Syntastic settings
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_args = ['--fix']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
+" Conceal settings
 set conceallevel=1
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
@@ -41,3 +52,4 @@ let g:javascript_conceal_super                = "Ω"
 let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "λ"
 let g:javascript_conceal_underscore_arrow_function = "λ"
+
