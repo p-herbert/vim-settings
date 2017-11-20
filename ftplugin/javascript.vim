@@ -21,6 +21,9 @@ nmap <F3> :!mocha %<CR>
 " Comment out lines of code
 map <S-C> :norm i// <CR>
 
+" Search using ack
+map <leader>j <ESC>:Ack! --type=js --type=react<space>
+
 " =============================================================================
 " Package settings
 " =============================================================================
