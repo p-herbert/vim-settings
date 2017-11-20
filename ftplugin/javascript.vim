@@ -25,11 +25,10 @@ map <S-C> :norm i// <CR>
 " Package settings
 " =============================================================================
 
-" Enable jsx for js files as well
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0              " Enable jsx for js files as well
 
 " Prettier settings
-let g:prettier#config#tab_width = 4     " number of spaces per indentation level
+let g:prettier#config#tab_width = 4     " Number of spaces per indentation level
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#config#parser = 'babylon'
