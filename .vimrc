@@ -143,9 +143,6 @@ let g:SuperTabMappingBackward = "<c-M-space>"
 " Command-T settings
 let g:CommandTMaxFiles=20000
 
-" Prettier settings
-let g:prettier#quickfix_enabled = 0
-
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
