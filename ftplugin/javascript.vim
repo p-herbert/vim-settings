@@ -22,7 +22,7 @@ nmap <F3> :!mocha %<CR>
 map <S-C> :norm i// <CR>
 
 " Search using ack
-map <leader>j <ESC>:Ack! --type=js --type=react<space>
+map <leader>A :Ack! --type=js --type=react<space>
 
 " =============================================================================
 " Package settings
