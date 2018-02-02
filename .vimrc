@@ -150,7 +150,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 let g:syntastic_echo_current_error = 1
-let g:syntastic_cursor_column = 0
+let g:syntastic_cursor_column = 1
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
