@@ -43,7 +43,7 @@ set splitright
 " Messages, Info, Status
 set ruler          " Show current column and row in statusbar
 set laststatus=2
-set showtabline=2   " Always show tabs
+set showtabline=0   " Disable tabs
 set noshowmode      " Disable message on last line
 
 " Patterns
