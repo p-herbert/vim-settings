@@ -90,7 +90,6 @@ map <leader>w :%s/[ \t]\+$//g<CR>g;
 nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
-nmap <leader>ci :!git add % && git ci<CR>
 nmap <leader>s :Gstatus<CR>
 nmap <leader>e :Errors<CR>
 nmap <leader>S :Shell<Space>
