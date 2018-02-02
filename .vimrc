@@ -92,6 +92,7 @@ nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
 nmap <leader>ci :!git add % && git ci<CR>
 nmap <leader>s :Gstatus<CR>
+nmap <leader>e :Errors<CR>
 nmap <leader>p :Prettier<CR>:w<CR>
 nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 
