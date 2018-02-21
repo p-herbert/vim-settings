@@ -61,6 +61,9 @@ set wildignore+=*/node_modules,*/.git,*/.meteor
 " Reading/Writing
 set autoread
 
+" Set delays
+set timeoutlen=500 ttimeoutlen=0
+
 " Completion
 set completeopt=menuone,longest
 set omnifunc=syntaxcomplete#Complete
