@@ -171,6 +171,7 @@ let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_use_ultisnips_completer = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist = {
 \  'tagbar' : 1,
 \  'nerdtree' : 1,
