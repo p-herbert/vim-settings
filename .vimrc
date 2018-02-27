@@ -192,6 +192,10 @@ let g:easytags_languages = {
 " Gundo settings
 let g:gundo_preview_bottom = 1
 
+" delimitMate settings
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+
 " =============================================================================
 " augroup
 " =============================================================================
