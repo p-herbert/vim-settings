@@ -103,6 +103,9 @@ nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
+" Patch for delimitMate
+imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
+
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
 call togglebg#map("<F6>")       " load the background script
@@ -312,5 +315,13 @@ function! SyntasticCheckHook(errors)
     if !empty(a:errors)
         checktime
     endif
+endfunction
+
+" Patch for delimitMate
+function! YcmOnDeleteChar()
+  if pumvisible()
+    return "\<C-y>"
+  endif
+  return ""
 endfunction
 
