@@ -199,6 +199,8 @@ let g:gundo_preview_bottom = 1
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
 
+" Ack settings
+let g:ack_use_dispatch = 1
 " =============================================================================
 " augroup
 " =============================================================================
