@@ -109,3 +109,6 @@
 [submodule "bundle/QFEnter"]
 	path = bundle/QFEnter
 	url = https://github.com/vim-scripts/QFEnter.git
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
