@@ -169,6 +169,10 @@ let g:syntastic_style_warning_symbol = "≈"
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
+" vim-terraform settings
+let g:terraform_fmt_on_save = 1
+let g:terraform_align = 1
+
 " YCM settings
 let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_register_as_syntastic_checker = 0
