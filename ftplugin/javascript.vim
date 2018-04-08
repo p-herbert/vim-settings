@@ -24,6 +24,9 @@ map <S-C> :norm i// <CR>
 " Search using ack
 map <leader>A :Ack! --type=js --type=react<space>
 
+" vim-grepper settings
+let g:grepper.ack.grepprg = 'ack -s -H --nopager --nocolor --column --type=js --type=react'
+
 " =============================================================================
 " Package settings
 " =============================================================================
