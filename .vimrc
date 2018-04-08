@@ -169,6 +169,14 @@ let g:syntastic_style_warning_symbol = "≈"
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#keymap_ignored_filetypes = ['vimfiler', 'nerdtree']
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'default'
+
 " vim-terraform settings
 let g:terraform_fmt_on_save = 1
 let g:terraform_align = 1
