@@ -1,5 +1,6 @@
+" vim:foldmethod=marker:foldlevel=0
 " =============================================================================
-" Package management
+" Package management {{{
 " =============================================================================
 
 " Disable bundles by adding full path to bundle
@@ -9,9 +10,9 @@ let g:pathogen_blacklist=[]
 filetype off
 execute pathogen#infect()
 call pathogen#helptags()
-
+" }}}
 " =============================================================================
-" General settings
+" General settings {{{
 " =============================================================================
 
 syntax on                           " Syntax highlighting
@@ -68,9 +69,9 @@ set pumheight=6
 
 " Tag files
 set tags=./tags,tags,~/.vimtags
-
+" }}}
 " =============================================================================
-" Mappings
+" Mappings {{{
 " =============================================================================
 
 " Remap moving between windows
@@ -108,17 +109,17 @@ imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 :nnoremap <F5> :set hlsearch!<CR>
 call togglebg#map("<F6>")       " load the background script
 map <F8> :TagbarToggle<CR>
-
+" }}}
 " =============================================================================
-" Commands
+" Commands {{{
 " =============================================================================
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 command! -nargs=1 Find :vim /<args>/gj % | :copen
-
+" }}}
 " =============================================================================
-" Statusline
+" Statusline {{{
 " =============================================================================
 
 " Fugitive
@@ -128,9 +129,9 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+" }}}
 " =============================================================================
-" Package settings
+" Package settings {{{
 " =============================================================================
 
 " Tern settings
@@ -225,8 +226,9 @@ let g:grepper = {
     \ }
 \}
 
+" }}}
 " =============================================================================
-" augroup
+" augroup {{{
 " =============================================================================
 
 augroup cursor
@@ -255,9 +257,9 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.tex set filetype=tex
  au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>
 augroup END
-
+" }}}
 " =============================================================================
-" Highlight
+" Highlight {{{
 " =============================================================================
 
 " Change cursor by mode for iterm2
@@ -271,9 +273,9 @@ match OverLength /\%80v.\+/
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 2match ExtraWhitespace /[ \t]\+$/
-
+" }}}
 " =============================================================================
-" Terminal settings
+" Terminal settings {{{
 " =============================================================================
 
 if exists('$TMUX')
@@ -285,9 +287,9 @@ else
   "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
+" }}}
 " =============================================================================
-" Functions
+" Functions {{{
 " =============================================================================
 
 function! s:RunShellCommand(cmdline)
@@ -347,4 +349,6 @@ function! YcmOnDeleteChar()
   endif
   return ""
 endfunction
+" }}}
+" =============================================================================
 
