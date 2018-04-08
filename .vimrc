@@ -96,6 +96,7 @@ nmap <leader>S :Shell<Space>
 nmap <leader>D :Shell git diff --cached<CR>:set ft=diff<CR>
 nmap <leader>p :Prettier<CR>:w<CR>
 nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
+nmap <leader>G :Grepper -query<space>
 
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
