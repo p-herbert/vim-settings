@@ -118,3 +118,6 @@
 [submodule "bundle/vim-grepper"]
 	path = bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
+[submodule "bundle/vim-qf"]
+	path = bundle/vim-qf
+	url = https://github.com/romainl/vim-qf.git
