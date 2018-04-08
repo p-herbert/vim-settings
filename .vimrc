@@ -175,6 +175,9 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'default'
 
+" vim-qf settings
+let g:qf_mapping_ack_style = 1
+
 " vim-terraform settings
 let g:terraform_fmt_on_save = 1
 let g:terraform_align = 1
