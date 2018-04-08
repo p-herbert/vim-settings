@@ -215,6 +215,15 @@ let g:delimitMate_expand_space = 1
 let g:ack_use_dispatch = 1
 let g:ack_autoclose = 1
 
+" vim-grepper settings
+let g:grepper = {
+    \ 'tools': ['ack', 'rg'],
+    \ 'ack': {
+    \   'grepprg': 'ack -s -H --nopager --nocolor --column',
+    \   'grepformat': '%f:%l:%c:%m,%f:%l:%m'
+    \ }
+\}
+
 " =============================================================================
 " augroup
 " =============================================================================
