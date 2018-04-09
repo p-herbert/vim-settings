@@ -6,26 +6,26 @@ These are my personal vim settings.
 
 1. Clone the repository
 
-		git clone https://github.com/p-herbert/vim-settings.git ~/.vim
+        git clone https://github.com/p-herbert/vim-settings.git ~/.vim
 
 2. Initialize the local configuration file
 
-		git submodule init
+        git submodule init
 
 3. Fetch the submodules
 
-		git submodule update
+        git submodule update
 
-4.	Install [pathogen]
+4. Install [pathogen]
 5. Download the plugin [comments] and save it to `~/.vim/bundle/comments/plugin/`
 6. Download and save to `~/.vim/syntax/` the following syntax files:
-	- [SQL]
-	- [Octave]
-	- [R]
-	- [SAS]
+    - [SQL]
+    - [Octave]
+    - [R]
+    - [SAS]
 7. Create a symbolic link from the repository `.vimrc` to the home directory
 
-    	ln -s ~/.vim/.vimrc ~
+        ln -s ~/.vim/.vimrc ~
 
 8. Install [jsctags]
 
