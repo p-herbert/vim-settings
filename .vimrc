@@ -182,6 +182,7 @@ let g:qf_mapping_ack_style = 1
 " vim-terraform settings
 let g:terraform_fmt_on_save = 1
 let g:terraform_align = 1
+let g:terraform_fold_sections = 1
 
 " YCM settings
 let g:ycm_collect_identifiers_from_tags_files = 0
