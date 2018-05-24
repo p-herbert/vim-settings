@@ -84,7 +84,7 @@ map <c-h> <c-w>h
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-map <leader>td <Plug>TaskList
+map <leader>T <Plug>TaskList
 map <leader>g :GundoToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <leader>w :%s/[ \t]\+$//g<CR>g;
