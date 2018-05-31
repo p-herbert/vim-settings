@@ -17,24 +17,22 @@ These are my personal vim settings.
         git submodule update
 
 4. Install [pathogen]
-5. Download the plugin [comments] and save it to `~/.vim/bundle/comments/plugin/`
-6. Download and save to `~/.vim/syntax/` the following syntax files:
+5. Download and save to `~/.vim/syntax/` the following syntax files:
     - [SQL]
     - [Octave]
     - [R]
     - [SAS]
-7. Create a symbolic link from the repository `.vimrc` to the home directory
+6. Create a symbolic link from the repository `.vimrc` to the home directory
 
         ln -s ~/.vim/.vimrc ~
 
-8. Install [jsctags]
+7. Install [jsctags]
 
         npm i -g jsctags
 
 **Note: Additional system dependencies will need to be installed. See individual plugins for instructions.**
 
 [pathogen]: https://github.com/tpope/vim-pathogen
-[comments]: http://www.vim.org/scripts/script.php?script%5Fid=1528
 [SQL]: http://www.vim.org/scripts/script.php?script_id=3702
 [Octave]: http://www.vim.org/scripts/script.php?script_id=3600
 [R]: http://www.vim.org/scripts/script.php?script_id=2984
