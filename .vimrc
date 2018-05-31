@@ -164,6 +164,7 @@ let g:syntastic_error_symbol = "\u2718"
 let g:syntastic_style_error_symbol = "\u2714"
 let g:syntastic_warning_symbol = "∆"
 let g:syntastic_style_warning_symbol = "≈"
+let g:syntastic_typescript_checkers = ['tslint']
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
