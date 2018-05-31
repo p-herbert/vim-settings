@@ -166,6 +166,11 @@ let g:syntastic_warning_symbol = "∆"
 let g:syntastic_style_warning_symbol = "≈"
 let g:syntastic_typescript_checkers = ['tslint']
 
+let g:syntastic_filetype_map = {
+    \ "graphql": "typescript",
+    \ "graphqls": "typescript",
+    \ "gql": "typescript" }
+
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 
