@@ -121,3 +121,6 @@
 [submodule "bundle/vim-qf"]
 	path = bundle/vim-qf
 	url = https://github.com/romainl/vim-qf.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
