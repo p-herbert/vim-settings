@@ -22,10 +22,10 @@ nmap <F3> :!mocha %<CR>
 map <S-C> :norm i// <CR>
 
 " Search using ack
-map <leader>A :Ack! --type=js --type=react<space>
+map <leader>A :Ack! --type=js --type=react --type=graphql<space>
 
 " vim-grepper settings
-let g:grepper.ack.grepprg = 'ack -s -H --nopager --nocolor --column --type=js --type=react'
+let g:grepper.ack.grepprg = 'ack -s -H --nopager --nocolor --column --type=js --type=react --type=graphql'
 
 " =============================================================================
 " Package settings
