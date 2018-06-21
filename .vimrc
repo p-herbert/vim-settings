@@ -102,6 +102,10 @@ nmap <leader>G :Grepper -query<space>
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
+" Grepper
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
 " Patch for delimitMate
 imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
 
