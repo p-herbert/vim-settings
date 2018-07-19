@@ -18,9 +18,6 @@ nmap <F2> :JSHint<CR>
 " Mocha
 nmap <F3> :!mocha %<CR>
 
-" Comment out lines of code
-map <S-C> :norm i// <CR>
-
 " Search using ack
 map <leader>A :Ack! --type=js --type=react --type=graphql<space>
 
