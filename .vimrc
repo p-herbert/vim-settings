@@ -138,6 +138,9 @@ set statusline+=%*
 " Package settings {{{
 " =============================================================================
 
+" Vim-devicons
+let g:airline_powerline_fonts = 1
+
 " Tern settings
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
