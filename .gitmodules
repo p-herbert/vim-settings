@@ -130,3 +130,6 @@
 [submodule "vim-devicons"]
 	path = vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
