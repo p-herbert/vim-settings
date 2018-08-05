@@ -127,9 +127,6 @@
 [submodule "bundle/vim-graphql"]
 	path = bundle/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
-[submodule "vim-devicons"]
-	path = vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
 [submodule "bundle/vim-devicons"]
 	path = bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
