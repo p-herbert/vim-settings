@@ -272,6 +272,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
  au! BufRead,BufNewFile *.json set filetype=json
  au! BufRead,BufNewFile *.tex set filetype=tex
+ au! FileType gitcommit setlocal spell
  au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>
 augroup END
 " }}}
