@@ -173,6 +173,10 @@ let g:deoplete#sources#ternjs#filetypes = [
     \ 'vue'
     \ ]
 
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+
 " Tern settings
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
