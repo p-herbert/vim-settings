@@ -141,6 +141,38 @@ set statusline+=%*
 " Vim-devicons
 let g:airline_powerline_fonts = 1
 
+" Deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources = {}
+"let g:deoplete#sources.javascript = ['buffer', 'tern']
+let g:deoplete#sources.vim = ['buffer', 'vim']
+
+" Deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+
+" Disable the candidates in Comment/String syntaxes.
+"call deoplete#custom#source('_',
+"            \ 'disabled_syntaxes', ['Comment', 'String'])
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:deoplete#sources#ternjs#timeout = 1
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#include_keywords = 1
+let g:deoplete#sources#ternjs#in_literal = 1
+
+" Add extra files
+let g:deoplete#sources#ternjs#filetypes = [
+    \ 'jsx',
+    \ 'javascript.jsx',
+    \ 'vue'
+    \ ]
+
 " Tern settings
 let g:tern_map_keys=1
 let g:tern_show_argument_hints="on_hold"
