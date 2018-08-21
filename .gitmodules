@@ -94,9 +94,6 @@
 [submodule "bundle/vim-prettier"]
 	path = bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
