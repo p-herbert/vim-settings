@@ -279,6 +279,9 @@ let g:grepper.dir= 'repo,cwd,filecwd'
 
 " vim-prettier setttings
 let g:prettier#exec_cmd_async = 1
+
+" NERDTree settings
+let NERDTreeShowHidden = 1
 " }}}
 " =============================================================================
 " augroup {{{
