@@ -282,6 +282,10 @@ let g:prettier#exec_cmd_async = 1
 
 " NERDTree settings
 let NERDTreeShowHidden = 1
+
+" vim-gitgutter settings
+" let g:gitgutter_highlight_lines = 1
+" let g:gitgutter_async = 0
 " }}}
 " =============================================================================
 " augroup {{{
@@ -310,7 +314,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.pl set filetype=perl
  au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
  au! BufRead,BufNewFile *.json set filetype=json
- au! BufRead,BufNewFile *.tex set filetype=tex
+ au! BufRead,BufNewFile *.tex set filetype=tex | setlocal spell
  au! FileType gitcommit setlocal spell
  au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>
 augroup END
