@@ -282,6 +282,7 @@ let g:prettier#exec_cmd_async = 1
 
 " NERDTree settings
 let NERDTreeShowHidden = 1
+let NERDTreeIgnore = [ '\.git[[dir]]' ]
 
 " vim-gitgutter settings
 " let g:gitgutter_highlight_lines = 1
