@@ -282,7 +282,6 @@ let NERDTreeIgnore = [ '\.git[[dir]]' ]
 
 " vim-gitgutter settings
 let g:gitgutter_highlight_lines = 1
-" let g:gitgutter_async = 0
 " }}}
 " =============================================================================
 " augroup {{{
