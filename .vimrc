@@ -106,9 +106,6 @@ vn <leader>R :call HighlightRepeats()<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-" Patch for delimitMate
-imap <silent> <BS> <C-R>=YcmOnDeleteChar()<CR><Plug>delimitMateBS
-
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
 call togglebg#map("<F6>")       " load the background script
@@ -228,17 +225,6 @@ let g:qf_mapping_ack_style = 1
 let g:terraform_fmt_on_save = 1
 let g:terraform_align = 1
 let g:terraform_fold_sections = 1
-
-" YCM settings
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_register_as_syntastic_checker = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_use_ultisnips_completer = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_filetype_blacklist = {
-\  'tagbar' : 1,
-\  'nerdtree' : 1,
-\}
 
 " Easytags settings
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
@@ -397,14 +383,6 @@ function! SyntasticCheckHook(errors)
     if !empty(a:errors)
         checktime
     endif
-endfunction
-
-" Patch for delimitMate
-function! YcmOnDeleteChar()
-  if pumvisible()
-    return "\<C-y>"
-  endif
-  return ""
 endfunction
 " }}}
 " =============================================================================
