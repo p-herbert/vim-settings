@@ -1,8 +1,59 @@
-# Directories
-/autoload
-/_old\ bundles
+# Directories #
+###############
+node_modules
+.meteor
+.terraform
+__generated__
+autoload
+dist
 
-# Files
-.netrwhist
-.DS_Store
+# Temporary files #
+###################
+*~
+*.swp
+*.swo
+.tern-port
+
+# Environment variables #
+#########################
+.env
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.tfplan
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and Databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+*.DS_Store
+*.qicon
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Index files #
+###############
+tags
 
