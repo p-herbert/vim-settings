@@ -6,7 +6,7 @@ These are my personal vim settings.
 
 1. Clone the repository
 
-        git clone https://github.com/p-herbert/vim-settings.git ~/.vim
+        git clone https://github.com/p-herbert/vim-settings.git $HOME/.vim
 
 2. Initialize the local configuration file
 
@@ -17,14 +17,14 @@ These are my personal vim settings.
         git submodule update
 
 4. Install [pathogen]
-5. Download and save to `~/.vim/syntax/` the following syntax files:
+5. Download and save to `$HOME/.vim/syntax/` the following syntax files:
     - [SQL]
     - [Octave]
     - [R]
     - [SAS]
 6. Create a symbolic link from the repository `.vimrc` to the home directory
 
-        ln -s ~/.vim/.vimrc ~
+        ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
 7. Install [eslint] and [tern]
 
