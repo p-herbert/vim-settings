@@ -26,9 +26,10 @@ These are my personal vim settings.
 
         ln -s ~/.vim/.vimrc ~
 
-7. Install [jsctags]
+7. Install [eslint] and [tern]
 
-        npm i -g jsctags
+        npm i -g eslint
+        npm i -g tern
 
 8. Install [Nerd Fonts]
 
@@ -39,5 +40,6 @@ These are my personal vim settings.
 [Octave]: http://www.vim.org/scripts/script.php?script_id=3600
 [R]: http://www.vim.org/scripts/script.php?script_id=2984
 [SAS]: http://www.vim.org/scripts/script.php?script_id=3522
-[jsctags]: https://github.com/ramitos/jsctags
+[eslint]: https://eslint.org
 [Nerd Fonts]: https://github.com/ryanoasis/nerd-fonts
+[tern]: https://ternjs.net
