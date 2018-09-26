@@ -28,7 +28,7 @@ These are my personal vim settings.
 
 7. Install [eslint] and [tern]
 
-        npm i -g eslint
+        npm i -g eslint babel-eslint eslint-plugin-react
         npm i -g tern
 
 8. Install [Nerd Fonts]
