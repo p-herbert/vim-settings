@@ -30,6 +30,8 @@ These are my personal vim settings.
 
         npm i -g jsctags
 
+8. Install [Nerd Fonts]
+
 **Note: Additional system dependencies will need to be installed. See individual plugins for instructions.**
 
 [pathogen]: https://github.com/tpope/vim-pathogen
@@ -38,3 +40,4 @@ These are my personal vim settings.
 [R]: http://www.vim.org/scripts/script.php?script_id=2984
 [SAS]: http://www.vim.org/scripts/script.php?script_id=3522
 [jsctags]: https://github.com/ramitos/jsctags
+[Nerd Fonts]: https://github.com/ryanoasis/nerd-fonts
