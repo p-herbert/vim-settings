@@ -33,7 +33,16 @@ These are my personal vim settings.
 
 8. Install [Nerd Fonts]
 
-**Note: Additional system dependencies will need to be installed. See individual plugins for instructions.**
+9. Install [tern] dependencies
+
+        cd $HOME/.vim/bundle/tern
+        npm install
+
+10. Compile [command-t]
+
+		cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
+		ruby extconf.rb
+		make
 
 [pathogen]: https://github.com/tpope/vim-pathogen
 [SQL]: http://www.vim.org/scripts/script.php?script_id=3702
@@ -43,3 +52,4 @@ These are my personal vim settings.
 [eslint]: https://eslint.org
 [Nerd Fonts]: https://github.com/ryanoasis/nerd-fonts
 [tern]: https://ternjs.net
+[command-t]: https://github.com/wincent/command-t
