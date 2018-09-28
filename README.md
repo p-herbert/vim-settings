@@ -40,9 +40,9 @@ These are my personal vim settings.
 
 10. Compile [command-t]
 
-		cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
-		ruby extconf.rb
-		make
+        cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
+        ruby extconf.rb
+        make
 
 [pathogen]: https://github.com/tpope/vim-pathogen
 [SQL]: http://www.vim.org/scripts/script.php?script_id=3702
