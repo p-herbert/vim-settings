@@ -286,10 +286,6 @@ augroup END
 
 " Set filetype
 augroup filetypedetect
- au! BufRead,BufNewFile *.m,*.oct set filetype=octave
- au! BufRead,BufNewFile *.sas set filetype=sas
- au! BufRead,BufNewFile *.log set filetype=log
- au! BufRead,BufNewFile *.r,*.R set filetype=r
  au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
  au! BufRead,BufNewFile *.sql set filetype=sql
  au! BufRead,BufNewFile *.py set filetype=python
