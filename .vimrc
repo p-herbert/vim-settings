@@ -92,7 +92,6 @@ nmap <leader>A <Esc>:Ack!
 nmap <leader>d :Gvdiff<CR>
 nmap <leader>b :Gblame<CR>
 nmap <leader>s :Gstatus<CR>
-nmap <leader>e :Errors<CR>
 nmap <leader>S :Shell<Space>
 nmap <leader>D :Shell git diff --cached<CR>:set ft=diff<CR>
 nmap <leader>p :Prettier<CR>:w<CR>
