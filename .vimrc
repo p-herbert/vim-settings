@@ -105,10 +105,6 @@ vn <leader>R :call HighlightRepeats()<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-" Ale
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
 call togglebg#map("<F6>")       " load the background script
