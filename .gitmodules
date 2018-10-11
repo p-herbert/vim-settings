@@ -58,9 +58,6 @@
 [submodule "bundle/perl-support"]
 	path = bundle/perl-support
 	url = https://github.com/WolfgangMehner/perl-support
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
