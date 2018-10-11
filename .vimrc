@@ -215,7 +215,6 @@ let g:easytags_languages = {
 " Ale settings
 let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
-" let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_sign_error = "\u2718"
 let g:ale_sign_warning = "∆"
