@@ -228,6 +228,8 @@ let g:ale_sign_style_error = "\u2714"
 let g:ale_sign_style_warning = "≈"
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
+\   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
+\   'python':[ 'flake8' ],
 \}
 
 " Gundo settings
