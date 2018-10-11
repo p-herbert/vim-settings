@@ -36,11 +36,6 @@ let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled = 0
 let g:prettier#config#parser = 'babylon'
 
-" Syntastic settings
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_args = ['--fix']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
-
 " Conceal settings
 set conceallevel=1
 let g:javascript_conceal_function             = "ƒ"

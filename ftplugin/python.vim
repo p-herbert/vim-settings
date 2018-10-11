@@ -5,8 +5,6 @@ autocmd BufRead *.py Python3Syntax
 " Comment out lines of code
 map <S-C> :norm i#<CR>
 
-let g:syntastic_python_checkers = ['flake8']
-
 " Execute Python Script
 autocmd BufReadPre *.py nmap <F1> :w<CR>:!python3 %:r.py<CR>
 

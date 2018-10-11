@@ -129,11 +129,6 @@ command! -nargs=1 Find :vim /<args>/gj % | :copen
 
 " Fugitive
 set statusline+=%{fugitive#statusline()}
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 " }}}
 " =============================================================================
 " Package settings {{{
@@ -189,27 +184,6 @@ let g:SuperTabMappingBackward = "<c-M-space>"
 
 " Command-T settings
 let g:CommandTMaxFiles=20000
-
-" Syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5
-let g:syntastic_echo_current_error = 1
-let g:syntastic_cursor_column = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = "\u2718"
-let g:syntastic_style_error_symbol = "\u2714"
-let g:syntastic_warning_symbol = "∆"
-let g:syntastic_style_warning_symbol = "≈"
-let g:syntastic_typescript_checkers = ['tslint']
-
-let g:syntastic_filetype_map = {
-    \ "graphql": "typescript",
-    \ "graphqls": "typescript",
-    \ "gql": "typescript" }
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
@@ -390,13 +364,6 @@ function! HighlightRepeats() range
       exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
     endif
   endfor
-endfunction
-
-" Autofix with eslint
-function! SyntasticCheckHook(errors)
-    if !empty(a:errors)
-        checktime
-    endif
 endfunction
 " }}}
 " =============================================================================
