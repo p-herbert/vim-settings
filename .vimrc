@@ -106,6 +106,10 @@ vn <leader>R :call HighlightRepeats()<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
+" Ale
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
 call togglebg#map("<F6>")       " load the background script
@@ -217,6 +221,7 @@ let g:airline#extensions#tabline#keymap_ignored_filetypes = ['vimfiler', 'nerdtr
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#ale#enabled = 1
 
 " vim-qf settings
 let g:qf_mapping_ack_style = 1
@@ -236,6 +241,19 @@ let g:easytags_languages = {
 \       'cmd': 'jsctags',
 \       'recurse_flag': ''
 \   }
+\}
+
+" Ale settings
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_sign_error = "\u2718"
+let g:ale_sign_warning = "∆"
+let g:ale_sign_style_error = "\u2714"
+let g:ale_sign_style_warning = "≈"
+let g:ale_linters = {
+\   'javascript': ['prettier', 'eslint'],
 \}
 
 " Gundo settings
