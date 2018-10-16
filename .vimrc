@@ -228,6 +228,9 @@ let g:ale_linters = {
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
 \   'python': [ 'flake8' ],
 \}
+let g:ale_fixers = {
+\    'javascript': [ 'eslint' ],
+\}
 
 " Gundo settings
 let g:gundo_preview_bottom = 1
