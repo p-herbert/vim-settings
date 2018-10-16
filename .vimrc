@@ -227,9 +227,11 @@ let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
 \   'python': [ 'flake8' ],
+\   'json': [ 'jsonlint' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
+\   'json': [ 'prettier' ],
 \}
 
 " Gundo settings
