@@ -58,6 +58,7 @@ set wildignore+=*/node_modules,*/.git,*/.meteor,*/__generated__
 
 " Reading/Writing
 set autoread
+set updatetime=100
 
 " Set delays
 set timeoutlen=500 ttimeoutlen=0
