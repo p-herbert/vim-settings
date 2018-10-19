@@ -136,7 +136,6 @@ let g:airline_powerline_fonts = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources = {}
-"let g:deoplete#sources.javascript = ['buffer', 'tern']
 let g:deoplete#sources.vim = ['buffer', 'vim']
 
 " Deoplete tab-complete
