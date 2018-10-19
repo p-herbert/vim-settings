@@ -287,6 +287,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.py set filetype=python
  au! BufRead,BufNewFile *.pl set filetype=perl
  au! BufRead,BufNewFile *.js set filetype=javascript | setlocal omnifunc=tern#Complete
+ au! BufRead,BufNewFile *.css set filetype=css | setlocal omnifunc=csscomplete#CompleteCSS
  au! BufRead,BufNewFile *.json set filetype=json
  au! BufRead,BufNewFile *.tex set filetype=tex | setlocal spell
  au! FileType gitcommit setlocal spell
