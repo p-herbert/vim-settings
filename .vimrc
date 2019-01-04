@@ -69,7 +69,7 @@ set omnifunc=syntaxcomplete#Complete
 set pumheight=6
 
 " Tag files
-set tags=./tags,tags,~/.vimtags
+set tags=./tags,tags,$HOME/.vimtags
 
 " Undo
 set undofile
