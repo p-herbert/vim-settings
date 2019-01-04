@@ -70,6 +70,10 @@ set pumheight=6
 
 " Tag files
 set tags=./tags,tags,~/.vimtags
+
+" Undo
+set undofile
+set undodir=$HOME/.vim/undo
 " }}}
 " =============================================================================
 " Mappings {{{
