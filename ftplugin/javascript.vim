@@ -5,6 +5,7 @@
 set foldmethod=syntax
 set foldlevelstart=1
 let javaScript_fold=1
+set makeprg=jest
 
 " =============================================================================
 " Mappings
