@@ -30,6 +30,7 @@ let g:grepper.ack.grepprg = 'ack -s -H --nopager --nocolor --column --type=js --
 " =============================================================================
 
 let g:jsx_ext_required = 0              " Enable jsx for js files as well
+let g:javascript_plugin_flow = 1        " Enable syntax highlighting for Flow
 
 " Prettier settings
 let g:prettier#config#tab_width = 4     " Number of spaces per indentation level
