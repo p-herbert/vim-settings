@@ -229,11 +229,13 @@ let g:ale_linters = {
 \   'python': [ 'flake8' ],
 \   'json': [ 'jsonlint' ],
 \   'css': [ 'prettier' ],
+\   'html': [ 'prettier' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
 \   'json': [ 'prettier' ],
 \   'css': [ 'prettier' ],
+\   'html': [ 'prettier' ],
 \}
 
 " Gundo settings
