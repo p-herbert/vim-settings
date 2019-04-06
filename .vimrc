@@ -54,7 +54,7 @@ set wildmenu
 set wildmode=longest,list,full
 
 " Ignore
-set wildignore+=*/node_modules,*/.git,*/.meteor,*/__generated__,*/build
+set wildignore+=*/node_modules,*/.git,*/.meteor,*/__generated__,*/build,*/amplify,*.png,*.svg,*.jpg,*.ico,.DS_Store
 
 " Reading/Writing
 set autoread
