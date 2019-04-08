@@ -228,7 +228,7 @@ let g:ale_linters = {
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
 \   'python': [ 'flake8' ],
 \   'json': [ 'jsonlint' ],
-\   'css': [ 'prettier' ],
+\   'css': [ 'csslint' ],
 \   'html': [ 'prettier' ],
 \}
 let g:ale_fixers = {
