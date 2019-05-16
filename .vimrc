@@ -229,7 +229,7 @@ let g:ale_linters = {
 \   'python': [ 'flake8' ],
 \   'json': [ 'jsonlint' ],
 \   'css': [ 'csslint' ],
-\   'html': [ 'prettier' ],
+\   'html': [ 'prettier', 'embertemplatelint' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
@@ -268,6 +268,9 @@ let NERDTreeIgnore = [ '\.git[[dir]]' ]
 
 " vim-gitgutter settings
 let g:gitgutter_highlight_lines = 0
+
+"vim-mustache-handlebars
+let g:mustache_abbreviations = 1
 " }}}
 " =============================================================================
 " augroup {{{

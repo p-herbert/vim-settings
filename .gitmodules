@@ -143,3 +143,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git@github.com:mustache/vim-mustache-handlebars.git

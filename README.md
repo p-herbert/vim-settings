@@ -22,9 +22,9 @@ These are my personal vim settings.
 
         ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
-6. Install [eslint], [prettier], [csslint], and [tern]
+6. Install [eslint], [prettier], [csslint], [mustache], and [tern]
 
-        npm i -g eslint preitter csslint tern babel-eslint eslint-plugin-react eslint-plugin-prettier
+        npm i -g eslint preitter csslint tern babel-eslint eslint-plugin-react eslint-plugin-prettier ember-template-lint
 
 7. Install [Nerd Fonts]
 
@@ -46,3 +46,4 @@ These are my personal vim settings.
 [Nerd Fonts]: https://github.com/ryanoasis/nerd-fonts
 [tern]: https://ternjs.net
 [command-t]: https://github.com/wincent/command-t
+[mustache]: https://github.com/ember-template-lint/ember-template-lint
