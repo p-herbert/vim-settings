@@ -22,6 +22,9 @@ These are my personal vim settings.
 
         ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
+    ## Note
+    On macOS replace the system version of `vim` and `ruby` using [brew].
+
 6. Install [eslint], [prettier], [csslint], [mustache], and [tern]
 
         npm i -g eslint prettier csslint tern babel-eslint eslint-plugin-react eslint-plugin-prettier ember-template-lint
@@ -39,6 +42,9 @@ These are my personal vim settings.
         ruby extconf.rb
         make
 
+    ## Note
+    [command-t] must be compiled using the same version of `ruby` linked to `vim`.
+
 [pathogen]: https://github.com/tpope/vim-pathogen
 [eslint]: https://eslint.org
 [prettier]: https://prettier.io
@@ -47,3 +53,4 @@ These are my personal vim settings.
 [tern]: https://ternjs.net
 [command-t]: https://github.com/wincent/command-t
 [mustache]: https://github.com/ember-template-lint/ember-template-lint
+[brew]: https://brew.sh/
