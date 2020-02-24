@@ -230,12 +230,14 @@ let g:ale_linters = {
 \   'json': [ 'jsonlint' ],
 \   'css': [ 'csslint' ],
 \   'html': [ 'prettier', 'embertemplatelint' ],
+\   'rust': [ 'rls' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
 \   'json': [ 'prettier' ],
 \   'css': [ 'prettier' ],
 \   'html': [ 'prettier' ],
+\   'rust': [ 'rustfmt' ],
 \}
 
 " Gundo settings
@@ -296,6 +298,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.js,*.jsx set filetype=javascript.jsx | setlocal omnifunc=tern#Complete
  au! BufRead,BufNewFile *.css set filetype=css | setlocal omnifunc=csscomplete#CompleteCSS
  au! BufRead,BufNewFile *.json set filetype=json
+ au! BufRead,BufNewFile *.rs set filetype=rust
  au! BufRead,BufNewFile *.tex set filetype=tex | setlocal spell
  au! FileType gitcommit setlocal spell
  au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>

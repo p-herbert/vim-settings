@@ -45,6 +45,14 @@ These are my personal vim settings.
     ## Note
     [command-t] must be compiled using the same version of `ruby` linked to `vim`.
 
+10. Install [rust]
+
+        curl https://sh.rustup.rs -sSf | sh
+
+11. Install [rls]
+
+        rustup component add rls rust-analysis rust-src
+
 [pathogen]: https://github.com/tpope/vim-pathogen
 [eslint]: https://eslint.org
 [prettier]: https://prettier.io
@@ -54,3 +62,5 @@ These are my personal vim settings.
 [command-t]: https://github.com/wincent/command-t
 [mustache]: https://github.com/ember-template-lint/ember-template-lint
 [brew]: https://brew.sh/
+[rust]: https://rustup.rs/#
+[rls]: https://github.com/rust-lang/rls
