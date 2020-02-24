@@ -224,7 +224,7 @@ let g:ale_sign_style_error = "\u2714"
 let g:ale_sign_style_warning = "≈"
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-\   'javascript': ['standard', 'prettier', 'eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
 \   'python': [ 'flake8' ],
 \   'json': [ 'jsonlint' ],
@@ -232,7 +232,7 @@ let g:ale_linters = {
 \   'html': [ 'prettier', 'embertemplatelint' ],
 \}
 let g:ale_fixers = {
-\   'javascript': [ 'standard', 'eslint' ],
+\   'javascript': [ 'eslint' ],
 \   'json': [ 'prettier' ],
 \   'css': [ 'prettier' ],
 \   'html': [ 'prettier' ],
