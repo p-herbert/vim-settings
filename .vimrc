@@ -223,6 +223,7 @@ let g:ale_sign_warning = "∆"
 let g:ale_sign_style_error = "\u2714"
 let g:ale_sign_style_warning = "≈"
 let g:ale_fix_on_save = 1
+let g:ale_rust_rls_toolchain="nightly"
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
