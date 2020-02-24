@@ -152,3 +152,12 @@
 [submodule "bundle/vim-racer"]
 	path = bundle/vim-racer
 	url = https://github.com/racer-rust/vim-racer
+[submodule "bundle/nvim-typescript"]
+	path = bundle/nvim-typescript
+	url = https://github.com/mhartington/nvim-typescript.git
+[submodule "bundle/yats.vim"]
+	path = bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim
+[submodule "bundle/vim-jsx-typescript"]
+	path = bundle/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git

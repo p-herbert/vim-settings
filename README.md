@@ -25,9 +25,9 @@ These are my personal vim settings.
     ## Note
     On macOS replace the system version of `vim` and `ruby` using [brew].
 
-6. Install [eslint], [prettier], [csslint], [mustache], and [tern]
+6. Install [eslint], [prettier], [csslint], [mustache], [typescript] and [tern]
 
-        npm i -g eslint prettier csslint tern babel-eslint eslint-plugin-react eslint-plugin-prettier ember-template-lint
+        npm i -g eslint prettier csslint tern babel-eslint eslint-plugin-react eslint-plugin-prettier ember-template-lint typescript
 
 7. Install [Nerd Fonts]
 
@@ -68,3 +68,4 @@ These are my personal vim settings.
 [rust]: https://rustup.rs/#
 [rls]: https://github.com/rust-lang/rls
 [racer]: https://github.com/racer-rust/racer
+[typescript]: https://www.npmjs.com/package/typescript

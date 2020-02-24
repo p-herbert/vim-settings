@@ -226,6 +226,7 @@ let g:ale_fix_on_save = 1
 let g:ale_rust_rls_toolchain="stable"
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
+\   'typescript': [ 'prettier' ],
 \   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
 \   'python': [ 'flake8' ],
 \   'json': [ 'jsonlint' ],
@@ -235,6 +236,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
+\   'typescript': [ 'prettier' ],
 \   'json': [ 'prettier' ],
 \   'css': [ 'prettier' ],
 \   'html': [ 'prettier' ],
@@ -297,6 +299,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.py set filetype=python
  au! BufRead,BufNewFile *.pl set filetype=perl
  au! BufRead,BufNewFile *.js,*.jsx set filetype=javascript.jsx | setlocal omnifunc=tern#Complete
+ au! BufRead,BufNewFile *.ts,*.tsx set filetype=typescript
  au! BufRead,BufNewFile *.css set filetype=css | setlocal omnifunc=csscomplete#CompleteCSS
  au! BufRead,BufNewFile *.json set filetype=json
  au! BufRead,BufNewFile *.rs set filetype=rust
