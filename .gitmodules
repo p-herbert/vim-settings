@@ -146,3 +146,9 @@
 [submodule "bundle/mustache"]
 	path = bundle/mustache
 	url = git@github.com:mustache/vim-mustache-handlebars.git
+[submodule "bundle/deoplete-rust"]
+	path = bundle/deoplete-rust
+	url = https://github.com/sebastianmarkow/deoplete-rust
+[submodule "bundle/vim-racer"]
+	path = bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer

@@ -45,9 +45,11 @@ These are my personal vim settings.
     ## Note
     [command-t] must be compiled using the same version of `ruby` linked to `vim`.
 
-10. Install [rust]
+10. Install [rust] and [racer]
 
         curl https://sh.rustup.rs -sSf | sh
+        rustup install nightly
+        cargo +nightly install racer
 
 11. Install [rls]
 
@@ -64,3 +66,4 @@ These are my personal vim settings.
 [brew]: https://brew.sh/
 [rust]: https://rustup.rs/#
 [rls]: https://github.com/rust-lang/rls
+[racer]: https://github.com/racer-rust/racer
