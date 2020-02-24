@@ -48,7 +48,8 @@ These are my personal vim settings.
 10. Install [rust] and [racer]
 
         curl https://sh.rustup.rs -sSf | sh
-        rustup install nightly
+        rustup install stable
+        rustup toolchain add nightly
         cargo +nightly install racer
 
 11. Install [rls]
