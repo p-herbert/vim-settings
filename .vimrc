@@ -233,6 +233,7 @@ let g:ale_linters = {
 \   'css': [ 'csslint' ],
 \   'html': [ 'prettier', 'embertemplatelint' ],
 \   'rust': [ 'rls' ],
+\   'yaml': [ 'yamllint' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
@@ -303,6 +304,7 @@ augroup filetypedetect
  au! BufRead,BufNewFile *.css set filetype=css | setlocal omnifunc=csscomplete#CompleteCSS
  au! BufRead,BufNewFile *.json set filetype=json
  au! BufRead,BufNewFile *.rs set filetype=rust
+ au! BufRead,BufNewFile *.yml set filetype=yaml
  au! BufRead,BufNewFile *.tex set filetype=tex | setlocal spell
  au! FileType gitcommit setlocal spell
  au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>

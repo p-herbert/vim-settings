@@ -55,6 +55,8 @@ These are my personal vim settings.
 
         rustup component add rls rust-analysis rust-src
 
+12. Install [yamllint]
+
 [pathogen]: https://github.com/tpope/vim-pathogen
 [eslint]: https://eslint.org
 [prettier]: https://prettier.io
@@ -68,3 +70,4 @@ These are my personal vim settings.
 [rls]: https://github.com/rust-lang/rls
 [racer]: https://github.com/racer-rust/racer
 [typescript]: https://www.npmjs.com/package/typescript
+[yamllint]: https://yamllint.readthedocs.io/en/stable/
