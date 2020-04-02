@@ -224,6 +224,7 @@ let g:ale_sign_style_error = "\u2714"
 let g:ale_sign_style_warning = "≈"
 let g:ale_fix_on_save = 1
 let g:ale_rust_rls_toolchain="stable"
+let g:ale_yaml_yamllint_options = "-d {extends: default: rules: {document-end: {present: false}}}"
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': [ 'prettier' ],
