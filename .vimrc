@@ -1,6 +1,5 @@
-" vim:foldmethod=marker:foldlevel=0
 " =============================================================================
-" Package management {{{
+" Package Management
 " =============================================================================
 
 " Disable bundles by adding full path to bundle
@@ -10,44 +9,48 @@ let g:pathogen_blacklist=[]
 filetype off
 execute pathogen#infect()
 call pathogen#helptags()
-" }}}
+
 " =============================================================================
-" General settings {{{
+" General Settings
 " =============================================================================
 
 syntax on                           " Syntax highlighting
 filetype on                         " Try to detect filetypes
-filetype plugin indent on    	    " Enable loading indent file for filetype
-set number                          " Display line numbers
+filetype plugin indent on    	      " Enable loading indent file for filetype
+set number                   	      " Display line numbers
 
 " Color scheme
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+2match ExtraWhitespace /[ \t]\+$/
+
 " Moving/Editing
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 set backspace=2
-set tw=79              " Set the maximum column width
-set wrap               " Wrap long lines
+set tw=79              		          " Set the maximum column width
+set wrap               	            " Wrap long lines
 set clipboard=unnamed
 set splitright
 
 " Messages, Info, Status
-set ruler          " Show current column and row in statusbar
+set ruler           		            " Show current column and row in statusbar
 set laststatus=2
-set showtabline=0   " Disable tabs
-set noshowmode      " Disable message on last line
+set showtabline=0                   " Disable tabs
+set noshowmode                      " Disable message on last line
 
 " Patterns
-set ignorecase      " Default to using case insensitive searches,
-set smartcase       " unless uppercase letters are used in the regex.
-set hlsearch!      " Highlight all search matches
+set ignorecase                      " Default to using case insensitive searches
+set smartcase                       " Unless uppercase letters are used in the regex
+set hlsearch!                       " Highlight all search matches
 
 " Command mode autocomplete
 set wildmenu
@@ -65,8 +68,8 @@ set timeoutlen=500 ttimeoutlen=0
 
 " Completion
 set completeopt=menuone,longest
-set omnifunc=syntaxcomplete#Complete
-set pumheight=6
+"set omnifunc=syntaxcomplete#Complete
+set pumheight=10
 
 " Tag files
 set tags=./tags,tags,$HOME/.vimtags
@@ -74,9 +77,10 @@ set tags=./tags,tags,$HOME/.vimtags
 " Undo
 set undofile
 set undodir=$HOME/.vim/undo
+
 " }}}
 " =============================================================================
-" Mappings {{{
+" Mappings
 " =============================================================================
 
 " Remap moving between windows
@@ -89,200 +93,149 @@ map <c-h> <c-w>h
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-map <leader>T <Plug>TaskList
-map <leader>g :GundoToggle<CR>
-map <C-n> :NERDTreeToggle<CR>
-map <leader>w :%s/[ \t]\+$//g<CR>g;
-nmap <leader>A <Esc>:Ack!
-nmap <leader>d :Gvdiff<CR>
-nmap <leader>b :Gblame<CR>
-nmap <leader>s :Gstatus<CR>
-nmap <leader>S :Shell<Space>
-nmap <leader>D :Shell git diff --cached<CR>:set ft=diff<CR>
-nmap <leader>p :Prettier<CR>:w<CR>
-nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
-nmap <leader>G :Grepper -query<space>
-
 " Map HighlightRepeats function
 vn <leader>R :call HighlightRepeats()<CR>
 
-" Grepper
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
+" Remove whitespace
+map <leader>w :%s/[ \t]\+$//g<CR>g;
+
+" Git
+nmap <leader>d :Gvdiff<CR>
+nmap <leader>b :Git blame<CR>
+nmap <leader>ci :!git add % && git ci<CR>
+nmap <leader>s :Git status<CR>
+nmap <leader>h :vsp \| :Glog -- % <CR><CR> \| :copen<CR>
 
 " Function keys
 :nnoremap <F5> :set hlsearch!<CR>
-call togglebg#map("<F6>")       " load the background script
-map <F8> :TagbarToggle<CR>
-" }}}
+
+" Buffers
+nmap ]b :bn<CR>
+nmap [b :bp<CR>
+
+" fzf
+nnoremap <C-space> :Rg<CR>
+nnoremap <S-space> :GFiles<CR>
+nnoremap <CS-space> :Files<CR>
+
 " =============================================================================
-" Commands {{{
+" Commands
 " =============================================================================
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 command! -nargs=1 Find :vim /<args>/gj % | :copen
-" }}}
-" =============================================================================
-" Statusline {{{
-" =============================================================================
 
-" Fugitive
-set statusline+=%{fugitive#statusline()}
-" }}}
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
 " =============================================================================
-" Package settings {{{
+" Package Mappings
 " =============================================================================
 
-" Vim-devicons
-let g:airline_powerline_fonts = 1
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
-" Deoplete.nvim
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources.vim = ['buffer', 'vim']
+" gundo.vim
+map <leader>g :GundoToggle<CR>
 
-" Deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" coc
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-let g:deoplete#sources#ternjs#timeout = 1
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#include_keywords = 1
-let g:deoplete#sources#ternjs#in_literal = 1
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible()
+                              \? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Add extra files
-let g:deoplete#sources#ternjs#filetypes = [
-    \ 'jsx',
-    \ 'javascript.jsx',
-    \ 'vue'
-    \ ]
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
-" Use tern_for_vim.
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+" Navigate diagnostic
+nmap <silent> [e <Plug>(coc-diagnostic-prev)
+nmap <silent> ]e <Plug>(coc-diagnostic-next)
 
-" Tern settings
-let g:tern_map_keys=1
-let g:tern_show_argument_hints="on_hold"
-let g:tern_show_signature_in_pum=1
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" SnipMate author
-let g:snips_author='Peter Herbert'
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
 
-" SuperTab settings
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabMappingForward = "<M-space>"
-let g:SuperTabMappingBackward = "<c-M-space>"
+" Formatting selected code
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
-" Command-T settings
-let g:CommandTMaxFiles=20000
+" Applying code actions to the selected code block
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
-" Powerline settings
-let g:Powerline_symbols = 'fancy'
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf <Plug>(coc-fix-current)
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#keymap_ignored_filetypes = ['vimfiler', 'nerdtree']
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#ale#enabled = 1
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 
-" vim-qf settings
-let g:qf_mapping_ack_style = 1
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-" vim-terraform settings
-let g:terraform_fmt_on_save = 1
-let g:terraform_align = 1
-let g:terraform_fold_sections = 1
+" Remap <C-f> and <C-b> to scroll float windows/popups
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
 
-" Easytags settings
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_file = 1
-let g:easytags_languages = {
-\   'javascript': {
-\       'args': ['-f'],
-\       'cmd': 'jsctags',
-\       'recurse_flag': ''
-\   }
-\}
-
-" Ale settings
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-let g:ale_list_window_size = 3
-let g:ale_open_list = 0
-let g:ale_lint_on_enter = 0
-let g:ale_sign_error = "\u2718"
-let g:ale_sign_warning = "∆"
-let g:ale_sign_style_error = "\u2714"
-let g:ale_sign_style_warning = "≈"
-let g:ale_fix_on_save = 1
-let g:ale_rust_rls_toolchain="stable"
-let g:ale_yaml_yamllint_options = "-d {extends: default: rules: {document-end: {present: false}}}"
-let g:ale_linters = {
-\   'javascript': ['prettier', 'eslint'],
-\   'typescript': [ 'prettier' ],
-\   'tex': [ 'chkTex', 'proselint', 'text/textlint' ],
-\   'python': [ 'flake8' ],
-\   'json': [ 'jsonlint' ],
-\   'css': [ 'csslint' ],
-\   'html': [ 'prettier', 'embertemplatelint' ],
-\   'rust': [ 'rls' ],
-\   'yaml': [ 'yamllint' ],
-\}
-let g:ale_fixers = {
-\   'javascript': [ 'eslint' ],
-\   'typescript': [ 'prettier' ],
-\   'json': [ 'prettier' ],
-\   'css': [ 'prettier' ],
-\   'html': [ 'prettier' ],
-\   'rust': [ 'rustfmt' ],
-\}
-
-" Gundo settings
-let g:gundo_preview_bottom = 1
-
-" delimitMate settings
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
-
-" Ack settings
-let g:ack_use_dispatch = 1
-let g:ack_autoclose = 1
-
-" vim-grepper settings
-let g:grepper = {
-    \ 'tools': ['ack', 'rg'],
-    \ 'ack': {
-    \   'grepprg': 'ack -s -H --nopager --nocolor --column',
-    \   'grepformat': '%f:%l:%c:%m,%f:%l:%m'
-    \ }
-\}
-let g:grepper.dir= 'repo,cwd,filecwd'
-
-" vim-prettier setttings
-let g:prettier#exec_cmd_async = 1
+" =============================================================================
+" Package Settings
+" =============================================================================
 
 " NERDTree settings
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = [ '\.git[[dir]]' ]
+let NERDTreeIgnore = [ '\.git[[dir]]', '.DS_Store' ]
 
-" vim-gitgutter settings
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" gundo.vim
+let g:gundo_preview_bottom = 1
+let g:gundo_prefer_python3 = 1
+
+" vim-gitgutter
 let g:gitgutter_highlight_lines = 0
 
-"vim-mustache-handlebars
-let g:mustache_abbreviations = 1
-" }}}
-" =============================================================================
-" augroup {{{
-" =============================================================================
+" coc
+let g:coc_filetype_map = {
+  \ 'yaml.docker-compose': 'dockercompose',
+  \ }
 
+" =============================================================================
+" augroup
+" =============================================================================
 augroup cursor
     autocmd!
     :autocmd InsertEnter * set cul
@@ -290,59 +243,26 @@ augroup cursor
 augroup END
 
 augroup NERDTree
+    " Open a NERDTree automatically when vim starts up if no files were specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
+
     " Close vim if the only window left open is a NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
 " Set filetype
 augroup filetypedetect
- au! BufRead,BufNewFile *.xml,*.xsd set filetype=xml
- au! BufRead,BufNewFile *.sql set filetype=sql
- au! BufRead,BufNewFile *.py set filetype=python
- au! BufRead,BufNewFile *.pl set filetype=perl
- au! BufRead,BufNewFile *.js,*.jsx set filetype=javascript.jsx | setlocal omnifunc=tern#Complete
- au! BufRead,BufNewFile *.ts,*.tsx set filetype=typescript
- au! BufRead,BufNewFile *.css set filetype=css | setlocal omnifunc=csscomplete#CompleteCSS
- au! BufRead,BufNewFile *.json set filetype=json
- au! BufRead,BufNewFile *.rs set filetype=rust
- au! BufRead,BufNewFile *.yml set filetype=yaml
- au! BufRead,BufNewFile *.tex set filetype=tex | setlocal spell
+ au! BufRead,BufNewFile *.tex, *.txt, *.md setlocal spell
  au! FileType gitcommit setlocal spell
- au! FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> | nnoremap <buffer><silent>q :q<cr>
+ au! FileType fugitiveblame nmap <leader>q gq
+ au! FileType qf nnoremap <buffer> <cr> <cr>:cclose<cr> | nnoremap <buffer><silent>q :q<cr>
+ au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-compose | endif
+ au FileType yaml if bufname("%") =~# "compose.yml" | set ft=yaml.docker-compose | endif
 augroup END
-" }}}
-" =============================================================================
-" Highlight {{{
-" =============================================================================
 
-" Change cursor by mode for iterm2
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-
-" Highlight background when text goes over 79 chars
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%80v.\+/
-
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-2match ExtraWhitespace /[ \t]\+$/
-" }}}
 " =============================================================================
-" Terminal settings {{{
-" =============================================================================
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  "let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-" }}}
-" =============================================================================
-" Functions {{{
+" Functions
 " =============================================================================
 
 function! s:RunShellCommand(cmdline)
@@ -369,24 +289,15 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
-" Highlight duplicate lines in file
-function! HighlightRepeats() range
-  let lineCounts = {}
-  let lineNum = a:firstline
-  while lineNum <= a:lastline
-    let lineText = getline(lineNum)
-    if lineText != ""
-      let lineCounts[lineText] = (has_key(lineCounts, lineText) ? lineCounts[lineText] : 0) + 1
-    endif
-    let lineNum = lineNum + 1
-  endwhile
-  exe 'syn clear Repeat'
-  for lineText in keys(lineCounts)
-    if lineCounts[lineText] >= 2
-      exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
-    endif
-  endfor
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
 endfunction
-" }}}
-" =============================================================================
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction

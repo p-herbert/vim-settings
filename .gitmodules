@@ -1,163 +1,55 @@
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "bundle/surround"]
-	path = bundle/surround
-	url = https://github.com/tpope/vim-surround
-[submodule "bundle/git"]
-	path = bundle/git
-	url = https://github.com/tpope/vim-git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T
-[submodule "bundle/ack"]
-	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = https://github.com/sjl/gundo.vim
-[submodule "bundle/pydoc"]
-	path = bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim
-[submodule "bundle/py.test"]
-	path = bundle/py.test
-	url = https://github.com/alfredodeza/pytest.vim
-[submodule "bundle/makegreen"]
-	path = bundle/makegreen
-	url = https://github.com/reinh/vim-makegreen
-[submodule "bundle/tasklist"]
-	path = bundle/tasklist
-	url = https://github.com/vim-scripts/TaskList.vim
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/vim-scripts/The-NERD-tree
-[submodule "bundle/ropevim"]
-	path = bundle/ropevim
-	url = https://github.com/klen/rope-vim
-[submodule "bundle/pythonsyntax"]
-	path = bundle/pythonsyntax
-	url = https://github.com/hdima/python-syntax
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
-[submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
-	url = https://github.com/xolox/vim-misc
-[submodule "bundle/easytags"]
-	path = bundle/easytags
-	url = https://github.com/xolox/vim-easytags
-[submodule "bundle/xmledit"]
-	path = bundle/xmledit
-	url = https://github.com/sukima/xmledit
-[submodule "bundle/jshint2.vim"]
-	path = bundle/jshint2.vim
-	url = https://github.com/Shutnik/jshint2.vim
-[submodule "bundle/perl-support"]
-	path = bundle/perl-support
-	url = https://github.com/WolfgangMehner/perl-support
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/tern"]
-	path = bundle/tern
-	url = https://github.com/ternjs/tern_for_vim
-[submodule "bundle/vim-flake8"]
-	path = bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8
-[submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule "bundle/vim-json"]
-	path = bundle/vim-json
-	url = https://github.com/elzr/vim-json
-[submodule "bundle/vim-jsx"]
-	path = bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate
-[submodule "bundle/vim-addon-mw-utils"]
-	path = bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/tlib_vim"]
-	path = bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "bundle/vim-prettier"]
-	path = bundle/vim-prettier
-	url = https://github.com/prettier/vim-prettier.git
-	ignore = untracked
-[submodule "bundle/delimitMate"]
-	path = bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate
-[submodule "bundle/vim-unimpaired"]
-	path = bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/vim-dispatch"]
-	path = bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "bundle/QFEnter"]
-	path = bundle/QFEnter
-	url = https://github.com/vim-scripts/QFEnter.git
-[submodule "bundle/vim-terraform"]
-	path = bundle/vim-terraform
-	url = https://github.com/hashivim/vim-terraform.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule "bundle/vim-grepper"]
-	path = bundle/vim-grepper
-	url = https://github.com/mhinz/vim-grepper.git
-[submodule "bundle/vim-qf"]
-	path = bundle/vim-qf
-	url = https://github.com/romainl/vim-qf.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://tpope.io/vim/fugitive.git
+[submodule "bundle/dispatch"]
+	path = bundle/dispatch
+	url = https://tpope.io/vim/dispatch.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/vim-packer"]
+	path = bundle/vim-packer
+	url = https://github.com/hashivim/vim-packer.git
+[submodule "bundle/gundo.vim"]
+	path = bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "bundle/coc.nvim"]
+	path = bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule "bundle/vim-devicons"]
+	path = bundle/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "bundle/vim-symlink"]
+	path = bundle/vim-symlink
+	url = https://github.com/aymericbeaumet/vim-symlink.git
+  ignore = untracked
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://tpope.io/vim/surround.git
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "bundle/vim-graphql"]
-	path = bundle/vim-graphql
-	url = https://github.com/jparise/vim-graphql.git
-[submodule "bundle/vim-devicons"]
-	path = bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
-[submodule "bundle/deoplete.nvim"]
-	path = bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "bundle/deoplete-ternjs"]
-	path = bundle/deoplete-ternjs
-	url = https://github.com/carlitux/deoplete-ternjs.git
-[submodule "bundle/neoinclude.vim"]
-	path = bundle/neoinclude.vim
-	url = https://github.com/Shougo/neoinclude.vim.git
-[submodule "bundle/nvim-yarp"]
-	path = bundle/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp.git
-[submodule "bundle/vim-hug-neovim-rpc"]
-	path = bundle/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc.git
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale
-[submodule "bundle/mustache"]
-	path = bundle/mustache
-	url = git@github.com:mustache/vim-mustache-handlebars.git
-[submodule "bundle/deoplete-rust"]
-	path = bundle/deoplete-rust
-	url = https://github.com/sebastianmarkow/deoplete-rust
-[submodule "bundle/vim-racer"]
-	path = bundle/vim-racer
-	url = https://github.com/racer-rust/vim-racer
-[submodule "bundle/nvim-typescript"]
-	path = bundle/nvim-typescript
-	url = https://github.com/mhartington/nvim-typescript.git
-[submodule "bundle/yats.vim"]
-	path = bundle/yats.vim
-	url = https://github.com/HerringtonDarkholme/yats.vim
-[submodule "bundle/vim-jsx-typescript"]
-	path = bundle/vim-jsx-typescript
-	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
