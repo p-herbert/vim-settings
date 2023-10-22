@@ -16,8 +16,8 @@ call pathogen#helptags()
 
 syntax on                           " Syntax highlighting
 filetype on                         " Try to detect filetypes
-filetype plugin indent on    	      " Enable loading indent file for filetype
-set number                   	      " Display line numbers
+filetype plugin indent on           " Enable loading indent file for filetype
+set number                          " Display line numbers
 
 " Color scheme
 set background=dark
@@ -36,13 +36,13 @@ set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 set backspace=2
-set tw=79              		          " Set the maximum column width
-set wrap               	            " Wrap long lines
+set tw=79                           " Set the maximum column width
+set wrap                            " Wrap long lines
 set clipboard=unnamed
 set splitright
 
 " Messages, Info, Status
-set ruler           		            " Show current column and row in statusbar
+set ruler                           " Show current column and row in statusbar
 set laststatus=2
 set showtabline=0                   " Disable tabs
 set noshowmode                      " Disable message on last line
@@ -78,7 +78,6 @@ set tags=./tags,tags,$HOME/.vimtags
 set undofile
 set undodir=$HOME/.vim/undo
 
-" }}}
 " =============================================================================
 " Mappings
 " =============================================================================
