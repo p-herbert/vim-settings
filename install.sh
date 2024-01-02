@@ -17,3 +17,4 @@ git submodule update
 
 # Setup coc
 npm ci --prefix "$SCRIPT_DIR/bundle/coc.nvim"
+npm run build --prefix "$SCRIPT_DIR/bundle/coc.nvim"
