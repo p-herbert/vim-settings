@@ -212,7 +212,7 @@ endif
 
 " NERDTree settings
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = [ '\.git[[dir]]', '.DS_Store' ]
+let NERDTreeIgnore = [ '\.git$[[dir]]', '.DS_Store' ]
 
 " airline
 let g:airline_powerline_fonts = 1
