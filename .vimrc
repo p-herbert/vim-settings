@@ -37,7 +37,7 @@ set smarttab expandtab autoindent
 set foldmethod=indent
 set foldlevel=20
 set backspace=2
-set tw=79                           " Set the maximum column width
+set tw=100                          " Set the maximum column width
 set wrap                            " Wrap long lines
 set clipboard=unnamed
 set splitright
