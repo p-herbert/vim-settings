@@ -20,6 +20,7 @@ filetype plugin indent on           " Enable loading indent file for filetype
 set number                          " Display line numbers
 
 " Color scheme
+set notermguicolors
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
